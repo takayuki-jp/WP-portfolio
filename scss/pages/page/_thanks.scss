@@ -1,0 +1,33 @@
+//works
+@use '../../util/index' as *;
+
+.page-thanks {
+  @include bgDotted;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.thanks__messageWrap {
+  margin-top: 96px;
+  @include sp {
+    margin-top: 64px;
+  }
+}
+
+.thanks__title {
+  font-size: 3.6rem;
+  text-align: center;
+  @include sp {
+    font-size: 2.4rem;
+  }
+}
+
+.thanks__btnWrap {
+  margin-top: 96px;
+  text-align: center;
+  @include sp {
+    margin-top: 64px;
+  }
+}

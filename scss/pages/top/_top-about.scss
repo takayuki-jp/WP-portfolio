@@ -1,0 +1,49 @@
+//top-works
+@use '../../util/index' as *;
+
+.top-about {
+  @include bgGrid;
+}
+
+.top-about__contentWrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  margin: 0 32px;
+  @include sp {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+  }
+}
+
+.top-about__image {
+  width: clamp(160px, 24vw, 300px);
+  height: auto;
+  border-radius: 50%;
+}
+
+
+.top-about__image > img {
+  width: 100%;
+  height: auto;
+}
+
+.top-about__commentWrap {
+  flex: 1;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 20px;
+  @include boxShadow;
+  opacity: 0;
+  transform: translateX(50px);
+  transition-delay: .5s;
+}
+
+.top-about__cooment {
+  margin-bottom: 1em;
+  line-height: 1.7;
+}
+.top-about__cooment.animeTrigger {
+  animation-delay: 2s;
+}

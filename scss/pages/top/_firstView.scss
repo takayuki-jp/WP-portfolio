@@ -1,0 +1,161 @@
+//firstView
+@use '../../util/index' as *;
+
+.mainVisual {
+  position: relative;
+  @include gradientGray;
+}
+.mainVisual__inner {
+  height: 800px;
+}
+
+.mainVisual__siteTitleWrap {
+  position: absolute;
+  top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 1;
+  @include sp {
+    position: absolute;
+    top: clamp(250px, 54vw, 320px);
+  }
+}
+.mainVisual__siteTitle {
+  font-size: 4.8rem;
+  @include sp {
+    font-size: 2.4rem;
+  }
+}
+.mainVisual__siteTitle > span {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 2.4rem;
+  @include sp {
+    font-size: 1.4rem;
+  }
+}
+.mainVisual__siteSubTitle {
+  margin-top: 32px;
+  @include sp {
+    margin-top: 16px;
+  }
+}
+
+.mainVisual__pageLink {
+  position: absolute;
+  bottom: 48px;
+  @include CenterX;
+  display: inline-block;
+  background-color: #fff;
+  border-radius: 16px;
+  @include boxShadow;
+  z-index: 1;
+  @include sp {
+    bottom: 42%;
+  }
+}
+.pageLink__list {
+  display: flex;
+  gap: 48px;
+  padding: 8px 54px 8px 32px;
+  font-family: "Open Sans";
+  @include sp {
+    gap: 30px;
+    padding: 8px 32px 8px 16px;
+  }
+}
+.pageLink__link {
+  position: relative;
+  @include sp{
+    font-size: 14px;
+  }
+}
+.pageLink__link::after {
+  content: "\f078";
+  font: var(--fa-font-solid);
+  position: absolute;
+  right: -1.5em;
+  @include CenterY;
+  transition: transform .5s ease;
+  @include sp {
+    right: calc(-1em - 4px);
+  }
+}
+.pageLink__link:hover::after {
+  transform: translateY(-20%);
+}
+
+.mainVisual.fix .mainVisual__pageLink {
+  position: fixed;
+  top: 60px;
+  @include CenterX;
+  height: fit-content;
+  background-color: $mainColor;
+  z-index: 100;
+  animation: fadeIn 1.5s ease;
+  @include sp {
+    top: 50px;
+  }
+}
+@keyframes fadeIn {
+  from {
+    transform: translate(-50%, -16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-50%, 0);
+    opacity: 1;
+  }
+}
+.mainVisual.fix .pageLink__link {
+  color: #fff;
+}
+
+
+.mainVisual__image {
+  position: absolute;
+}
+.mainVisual__image--PC {
+  left: 0;
+  bottom: 80px;
+  width: 20vw;
+  min-width: 300px;
+  height: auto;
+  @include sp {
+    width: 50vw;
+    min-width: 200px;
+    max-width: 240px;
+    top: 30px;
+    left: -30px;
+    bottom: unset;
+  }
+  @include tb {
+    top: 340px;
+    left: -60px;
+    width: clamp(240px, 33vw, 340px);
+    min-width: 240px;
+  }
+}
+.mainVisual__image--desk {
+  right: 3%;
+  bottom: 0;
+  width: 24vw;
+  min-width: 360px;
+  height: auto;
+  @include sp{
+    width: 50vw;
+    min-width: 200px;
+    max-width: 320px;
+  }
+}
+.mainVisual__image--light {
+  right: 4%;
+  bottom: 400px;
+  width: 100px;
+  transition: all 2s ease-in-out;
+  @include sp {
+    bottom: clamp(200px, 45vw, 350px);
+    width: 16vw;
+  }
+}

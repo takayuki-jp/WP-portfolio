@@ -1,0 +1,71 @@
+//header
+@use '../util/index' as *;
+
+//トップに戻るボタン
+.toTop__link {
+  position: fixed;
+  bottom: 1em;
+  right: 1em;
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  color: #fff;
+  text-align: center;
+  line-height: 44px;
+  background-color: $mainColor;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  opacity: .5;
+  transition: transform .5s ease, opacity .5s ease;
+  z-index: 10;
+}
+
+.toTop__link:hover,
+.toTop__link.active {
+  transform: translateY(-16px) !important;
+  opacity: 1 !important;
+}
+
+
+
+.footer__upper {
+  @include gradientBlue(90deg);
+}
+.footer__under {
+  background-color: #ededed;
+}
+.footer__inner {
+  margin: 0 auto;
+  padding: 8px;
+  max-width: 1440px;
+}
+
+.footer__contentWrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.footer__logo > img {
+  width: 190px;
+  @include sp {
+    width: 130px;
+  }
+}
+.footer__snsList {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.footer__snsLink > i {
+  font-size: 2.4rem;
+  color: #fff;
+}
+
+
+.footer__copyright {
+  font-family: "Open Sans";
+  text-align: center;
+  @include sp {
+    font-size: 1.2rem;
+  }
+}

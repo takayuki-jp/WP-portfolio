@@ -1,0 +1,207 @@
+//component
+@use './variables' as *;
+@use './mixin' as *;
+
+//c-sectionPadding
+.c-sectionPadding {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 16px;
+  @include sp {
+    padding: 40px 16px;
+  }
+}
+
+//c-sectionTitle
+.c-sectionTitleWrap {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 54px;
+  @include sp {
+    margin-bottom: 32px;
+  }
+}
+.c-sectionTitle {
+  position: relative;
+  font-family: "Open Sans";
+  font-size: 3.6rem;
+}
+.c-sectionTitle > span {
+  font-size: 4rem;
+  color: $mainColor;
+}
+.c-sectionTitle::after {
+  content: "";
+  left: 0;
+  bottom: 0;
+  display: block;
+  height: 3px;
+  margin-top: 4px;
+  background-color: $mainColor;
+}
+.c-sectionSubTitle {
+  flex: 1;
+  position: relative;
+  font-size: 2.4rem;
+  text-indent: 1em;
+  @include sp {
+    font-size: clamp(1.6rem, 4.8vw, 1.8rem);
+  }
+}
+.c-sectionSubTitle::after {
+  content: "";
+  left: 0;
+  bottom: 0;
+  display: block;
+  height: 3px;
+  margin-top: 6px;
+  background-color: $gray;
+}
+
+//c-btn
+.c-btnWrap {
+  position: relative;
+  margin-top: 54px;
+  text-align: center;
+  z-index: 1;
+}
+.c-btn {
+  position: relative;
+  display: inline-block;
+  padding: 12px 64px 14px 56px;
+  font-family: "Open Sans";
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  color: #fff;
+  background-color: $mainColor;
+  border-radius: 30px;
+  overflow: hidden;
+}
+.c-btn:hover {
+  color: $mainColor;
+  background-color: #fff;
+  opacity: 1;
+  transition: background-color .1s ease, color .5s ease;
+}
+
+.c-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid $mainColor;
+  border-radius: 30px;
+  clip-path: inset(0 50% 0 50%);
+  transition: clip-path .5s ease-out;
+  z-index: -1;
+}
+.c-btn:hover::before {
+  clip-path: inset(0 0 0 0);
+  z-index: 1;
+}
+
+
+.c-btn::after {
+  position: absolute;
+  content: "\f054";
+  font: var(--fa-font-solid);
+  font-size: 16px;
+  @include CenterY;
+  right: 44px;
+  margin-top: 2px;
+  color: #fff;
+  transition: all .5s ease;
+}
+.c-btn:hover::after {
+  color: $mainColor;
+  transform: translate(5px, -50%);
+}
+
+
+//worksCard
+.c-worksCardList {
+  gap: 32px;
+  @include sp {
+    gap: 16px;
+  }
+}
+.c-worksCard__link {
+  max-width: 360px;
+  padding: 24px 16px;
+  background-color: #fff;
+  border-radius: 10px;
+  @include boxShadow;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+  @include sp {
+    gap: 8px;
+  }
+}
+.c-worksCard__image > img {
+  width: 100%;
+}
+.c-worksCard__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  text-align: center;
+  flex-grow: 1;
+}
+.c-worksCard__client {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  @include sp {
+    font-size: 1.2rem;
+  }
+}
+.c-worksCard__title {
+  font-size: 2.4rem;
+  line-height: 1.6;
+  @include sp {
+    font-size: 1.6rem;
+  }
+}
+
+
+//c-categoryTag
+.c-categoryTag {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 8px;
+  font-weight: bold;
+  color: #fff;
+  @include sp {
+    font-size: 1.2rem;
+  }
+}
+.c-categoryTag--website {
+  background-color: $mainColor;
+}
+.c-categoryTag--LP {
+  background-color: $accentColor-pink;
+}
+
+
+//c-messgae
+.c-message__wrap {
+  margin: 56px auto 0;
+  text-align: center;
+}
+
+.c-message__message {
+  display: inline-block;
+  padding: 80px 40px;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  border-radius: 57% 43% 49% 51% / 52% 56% 44% 48% ;
+  @include sp {
+    padding: 56px 16px;
+    font-size: 1.4rem;
+
+  }
+}

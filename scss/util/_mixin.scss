@@ -1,0 +1,100 @@
+//mixin
+@use './variables' as *;
+
+// mediaQuery（最大幅）
+$sp: 720px;
+$tb: 1024px;
+
+@mixin sp {
+  @media screen and (max-width: #{$sp}) {
+    @content;
+  }
+}
+
+@mixin tb {
+  @media screen and (min-width: #{$sp + 1}) and (max-width: #{$tb}) {
+    @content;
+  }
+}
+
+//position
+@mixin Center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin CenterX {
+  left: 50%;
+  transform: translateX(-50%);
+}
+@mixin CenterY {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+//backgroundColor
+@mixin gradientBlue($direction: 90deg, $color-1: #C2E9FB, $color-2: #A1C4FD) {
+  background: linear-gradient($direction, $color-1, $color-2);
+}
+@mixin gradientGray($direction: 45deg, $color-1: #fff, $color-2: #f5f5f5) {
+  background: linear-gradient($direction, $color-1, $color-2);
+}
+
+@mixin bgGrid($color: #e8f8ff, $size: 20px) {
+  background: linear-gradient(90deg, $color 1px, transparent 1px),
+              linear-gradient(180deg, $color 1px, transparent 1px);
+  background-size: $size $size;
+  background-position: 10px 10px;
+}
+
+@mixin bgDotted($color: #e8f8ff, $size: 24px) {
+  background: radial-gradient(circle, $color 2px, transparent 2px);
+  background-size: $size $size;
+}
+
+
+@mixin boxShadow {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .1);
+}
+
+@mixin animeSlideInLtoR {
+  animation: slideInLtoR .5s ease forwards;
+  @keyframes slideInLtoR {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+@mixin animeSlideInRtoL {
+  animation: slideInRtoL .5s ease forwards;
+  @keyframes slideInRtoL {
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+@mixin animeSlideInUtoB {
+  animation: slideInUtoB .5s ease forwards;
+  @keyframes slideInUtoB {
+    0% {
+      opacity: 0;
+      transform: translateY(-16px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
