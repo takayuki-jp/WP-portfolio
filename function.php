@@ -21,7 +21,7 @@ function my_enqueue_scripts() {
 
   // 全ページで読み込み(fontAwesome // common)
   my_enqueue_script('fontawesome', 'https://kit.fontawesome.com/6f9cf09e6e.js', array(), null, true);
-  my_enqueue_script('main', get_template_directory_uri() . '/js/common.js', array(), null, true);
+  my_enqueue_script('common', get_template_directory_uri() . '/js/common.js', array(), null, true);
 
   //topページ用のJSファイルの読み込み（splide // toppage)
   if (is_home() || is_front_page()) {
