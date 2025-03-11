@@ -7,34 +7,35 @@
   <title><?php echo blog('name'); ?></title>
   <meta name="description" content="<?php echo bloginfo('description'); ?>">
   <link rel="icon" href="<?php echo esc_url(get_theme_file_uri('img/favicon.ico')); ?>">
-</head>
 
+  <?php wp_head(); ?>
+</head>
 
 <body>
   <header id="js_header" class="header">
     <div class="header__inner">
       <div class="header__siteLogo">
-        <a href="#" class="header__siteLink">
-          <img src="../img/logo.png" alt="WEBデザイナーたかゆきのポートフォリオサイトのロゴ">
+        <a class="header__siteLink" href="<?php echo esc_url(home_url()) ?>">
+          <img src="<?php echo esc_url(get_theme_file_uri('img/logo.png')); ?>" alt="WEBデザイナーたかゆきのポートフォリオサイトのロゴ">
         </a>
       </div>
       <nav class="header__menu">
         <div class="header__menuL">
           <ul class="header__menuL-list">
             <li class="header__menuL-listItem">
-              <a href="./archive--works.html" class="header__menuLink header__menuLink--arrowR"><span>works</span></a>
+              <a class="header__menuLink header__menuLink--arrowR" href="<?php echo esc_url(home_url('/archive--works/')); ?>"><span>works</span></a>
             </li>
             <li class="header__menuL-listItem">
-              <a href="./service.html" class="header__menuLink header__menuLink--arrowR"><span>service</span></a>
+              <a class="header__menuLink header__menuLink--arrowR" href="<?php echo esc_url(home_url('/service.html/')); ?>"><span>service</span></a>
             </li>
             <li class="header__menuL-listItem">
-              <a href="#js_topAbout" class="header__menuLink header__menuLink--arrowB"><span>about</span></a>
+              <a class="header__menuLink header__menuLink--arrowB" href="<?php echo esc_url(home_url('/#js_topAbout/')); ?>"><span>about</span></a>
             </li>
           </ul>
         </div>
         <div class="header__menuR">
           <button>
-            <a class="header__menuLink header__menuLink--contact header__menuLink--arrowR" href="./contact.html">contact</a>
+            <a class="header__menuLink header__menuLink--contact header__menuLink--arrowR" href="<?php echo esc_url(home_url('/contact/)')); ?>">contact</a>
           </button>
         </div>
       </nav>
@@ -48,13 +49,13 @@
       <div class="sp-menu__inner">
         <ul class="sp-menu__list">
           <li class="sp-menu__listItem">
-            <a class="sp-menu__link" href="./archive--works.html">works</a>
+            <a class="sp-menu__link" href="<?php echo esc_url(home_url('/archive--works/')); ?>">works</a>
           </li>
           <li class="sp-menu__listItem">
-            <a class="sp-menu__link" href="./service.html">service</a>
+            <a class="sp-menu__link" href="<?php echo esc_url(home_url('/service/')); ?>">service</a>
           </li>
           <li class="sp-menu__listItem">
-            <a class="sp-menu__link sp-menu__link--contact" href="./contact.html">contact</a>
+            <a class="sp-menu__link sp-menu__link--contact" href="<?php echo esc_url(home_url('/contact/')); ?>">contact</a>
           </li>
         </ul>
       </div>
