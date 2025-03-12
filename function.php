@@ -5,10 +5,10 @@ CSSファイルの読み込み
 **************************************************/
 function my_enqueue_styles() {
   wp_enqueue_style('ress', 'https://unpkg.com/ress/dist/ress.min.css', array(), null, 'all');
-  wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v6.7.1/css/all.css', array(), null, 'all');
+  wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v6.7.1/css/all.css', array('ress'), null, 'all');
   wp_enqueue_style('splide-core', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css', array('ress'), null, 'all');
-  wp_enqueue_style('theme-style', get_stylesheet_uri(),);
-  wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', array('ress', 'splide-core', 'swiper', 'fontawesome'), filemtime(get_template_directory() . '/css/style.css'), 'all');
+  wp_enqueue_style('theme-style', get_stylesheet_uri(), array('ress', 'fontawesome', 'splide-core'), null, 'all');
+  wp_enqueue_style('style', get_template_directory_uri() . '/css/style.css', array('ress', 'fontawesome', 'splide-core', 'theme-style'), filemtime(get_template_directory() . '/css/style.css'), 'all');
 }
 add_action('wp_enqueue_scripts', 'my_enqueue_styles');
 
@@ -20,18 +20,18 @@ JSファイルの読み込み
 function my_enqueue_scripts() {
 
   // 全ページで読み込み(fontAwesome // common)
-  my_enqueue_script('fontawesome', 'https://kit.fontawesome.com/6f9cf09e6e.js', array(), null, true);
-  my_enqueue_script('common', get_template_directory_uri() . '/js/common.js', array(), null, true);
+  wp_enqueue_script('fontawesome', 'https://kit.fontawesome.com/6f9cf09e6e.js', array(), null, true);
+  wp_enqueue_script('common', get_template_directory_uri() . '/js/common.js', array(), null, true);
 
   //topページ用のJSファイルの読み込み（splide // toppage)
   if (is_home() || is_front_page()) {
-    my_enqueue_script('splide', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js', array(), null, true);
-    my_enqueue_script('topPage', get_template_directory_uri() . '/js/topPage.js', array('splide'), null, true);
+    wp_enqueue_script('splide', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js', array(), null, true);
+    wp_enqueue_script('topPage', get_template_directory_uri() . '/js/topPage.js', array('splide'), null, true);
   }
 
   //serviceページのみのjSファイル読み込み（service）
   if (is_page('service.php')) {
-    my_enqueue_script('service', get_template_directory_uri() . '/js/service.js', array(), null, true);
+    wp_enqueue_script('service', get_template_directory_uri() . '/js/service.js', array(), null, true);
   }
 }
 
@@ -58,7 +58,7 @@ function add_ogp_meta_tags() {
   echo '<meta property="og:locale" content="' . esc_attr($locale) . '">' . "\n";
 }
 
-add_action('wp_head', 'function_add_ogp_meta_tags');
+add_action('wp_head', 'add_ogp_meta_tags');
 
 
 

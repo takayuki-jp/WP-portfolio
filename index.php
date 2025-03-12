@@ -1,79 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>portfolio | WEB Designer -Takayuki-</title>
-  <meta name="description" content="WEBサイト制作やLPページ制作のデザインから、コーディングまで。WEBデザイナーたかゆきの、作品紹介、お仕事窓口のWEBサイトです。">
-  <link rel="icon" href="../img/favicon.ico">
-
-  <!-- css -->
-  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css">
-  <script src="https://kit.fontawesome.com/6f9cf09e6e.js" crossorigin="anonymous"></script>
-  <!-- OGP -->
-  <meta property="og:site_name" content="portfolio | WEB Designer -Takayuki-">
-  <meta property="og:title" content="portfolio | WEB Designer -Takayuki-">
-  <meta property="og:description" content="WEBサイト制作やLPページ制作のデザインから、コーディングまで。WEBデザイナーたかゆきの、作品紹介、お仕事窓口のWEBサイトです。">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="https://">
-  <meta property="og:image" content="./img/fv01.png">
-  <meta property="og:locale" content="ja_JP">
-</head>
-
-<body>
-  <header id="js_header" class="header">
-    <div class="header__inner">
-      <div class="header__siteLogo">
-        <a href="#" class="header__siteLink">
-          <img src="../img/logo.png" alt="WEBデザイナーたかゆきのポートフォリオサイトのロゴ">
-        </a>
-      </div>
-      <nav class="header__menu">
-        <div class="header__menuL">
-          <ul class="header__menuL-list">
-            <li class="header__menuL-listItem">
-              <a href="./archive--works.html" class="header__menuLink header__menuLink--arrowR"><span>works</span></a>
-            </li>
-            <li class="header__menuL-listItem">
-              <a href="./service.html" class="header__menuLink header__menuLink--arrowR"><span>service</span></a>
-            </li>
-            <li class="header__menuL-listItem">
-              <a href="#js_topAbout" class="header__menuLink header__menuLink--arrowB"><span>about</span></a>
-            </li>
-          </ul>
-        </div>
-        <div class="header__menuR">
-          <button>
-            <a class="header__menuLink header__menuLink--contact header__menuLink--arrowR" href="./contact.html">contact</a>
-          </button>
-        </div>
-      </nav>
-      <button id="js_spMenuBtn" class="header__sp-menuBtn">
-        <span class="header__sp-menuBar"></span>
-        <span class="header__sp-menuBar"></span>
-      </button>
-    </div>
-
-    <nav class="sp-menu">
-      <div class="sp-menu__inner">
-        <ul class="sp-menu__list">
-          <li class="sp-menu__listItem">
-            <a class="sp-menu__link" href="./archive--works.html">works</a>
-          </li>
-          <li class="sp-menu__listItem">
-            <a class="sp-menu__link" href="./service.html">service</a>
-          </li>
-          <li class="sp-menu__listItem">
-            <a class="sp-menu__link sp-menu__link--contact" href="./contact.html">contact</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+<?php get_header(); ?>
 
   <main>
     <div class="mainVisual">
@@ -348,44 +273,7 @@
     </main>
 
 
-    <div class="toTop">
-      <a href="#" class="toTop__link"><i class="fa-solid fa-arrow-up"></i></a>
-    </div>
-    <footer class="footer">
-      <div class="footer__upper">
-        <div class="footer__inner">
-          <div class="footer__contentWrap">
-            <div class="footer__logo">
-              <img src="../img/logo.png" alt="たかゆきポートフォリオのロゴ">
-            </div>
-            <div class="footer__snsWrap">
-              <ul class="footer__snsList">
-                <li class="footer__snsItem">
-                  <a href="https://x.com/TakayukiTech" class="footer__snsLink"><i class="fa-brands fa-x-twitter"></i></a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer__under">
-        <div class="footer__inner">
-          <p class="footer__copyright">&copy;takayuki portfolio all rights 2025</p>
-        </div>
-      </div>
-
-    </footer>
-
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-  <script src="../js/common.js"></script>
-  <script src="../js/toppage.js"></script>
-</body>
-</html>
+<?php get_footer(); ?>
 
 
 

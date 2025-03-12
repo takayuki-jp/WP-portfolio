@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title><?php echo blog('name'); ?></title>
+  <title><?php echo bloginfo('name'); ?></title>
   <meta name="description" content="<?php echo bloginfo('description'); ?>">
   <link rel="icon" href="<?php echo esc_url(get_theme_file_uri('img/favicon.ico')); ?>">
 
@@ -35,7 +35,7 @@
         </div>
         <div class="header__menuR">
           <button>
-            <a class="header__menuLink header__menuLink--contact header__menuLink--arrowR" href="<?php echo esc_url(home_url('/contact/)')); ?>">contact</a>
+            <a class="header__menuLink header__menuLink--contact header__menuLink--arrowR" href="<?php echo esc_url(home_url('/contact/')); ?>">contact</a>
           </button>
         </div>
       </nav>
