@@ -24,8 +24,6 @@
           <p class="footer__copyright">&copy; takayuki portfolio all rights 2025</p>
         </div>
       </div>
-
     </footer>
-
 </body>
 </html>
