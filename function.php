@@ -13,12 +13,10 @@ function my_enqueue_styles() {
 add_action('wp_enqueue_scripts', 'my_enqueue_styles');
 
 
-
 /**************************************************
 JSファイルの読み込み
 **************************************************/
 function my_enqueue_scripts() {
-
   // 全ページで読み込み(fontAwesome // common)
   wp_enqueue_script('fontawesome', 'https://kit.fontawesome.com/6f9cf09e6e.js', array(), null, true);
   wp_enqueue_script('common', get_template_directory_uri() . '/js/common.js', array(), null, true);
@@ -59,9 +57,6 @@ function add_ogp_meta_tags() {
 }
 
 add_action('wp_head', 'add_ogp_meta_tags');
-
-
-
 
 
 /********** archive.php有効化（アーカイブページURLの設定） ***********/
