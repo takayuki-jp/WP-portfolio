@@ -1,5 +1,7 @@
+//適用テスト
 //mixin
 @use './variables' as *;
+
 
 // mediaQuery（最大幅）
 $sp: 720px;
@@ -70,6 +72,7 @@ $tb: 1024px;
     }
   }
 }
+
 
 @mixin animeSlideInRtoL {
   animation: slideInRtoL .5s ease forwards;

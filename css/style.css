@@ -1,3 +1,5 @@
+@charset "UTF-8";
+/* 適用チェック。 */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap");
 /* variables */
 /* color */
@@ -291,6 +293,7 @@ img {
 /* base
 ============================= */
 /* googleFonts */
+/* 確認のための記述です */
 /* fontSize */
 html {
   font-size: 62.5%;
