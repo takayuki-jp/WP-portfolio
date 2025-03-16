@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* 適用チェック。 */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap");
 /* variables */
 /* color */
@@ -13,6 +12,7 @@
     padding: 40px 16px;
   }
 }
+
 
 .c-sectionTitleWrap {
   display: -webkit-box;
