@@ -29,10 +29,11 @@
         </div>
       </div>
 
-      <img class="mainVisual__image mainVisual__image--PC" src="../img/mv-pc.png" alt="PC画像">
-      <img class="mainVisual__image mainVisual__image--desk" src="../img/mv-desk.png" alt="デスク画像">
-      <img class="mainVisual__image mainVisual__image--light" src="../img/mv-light.png" alt="デスク画像">
-    </div>
+      <img class="mainVisual__image mainVisual__image--PC" src="<?php echo esc_url(get_theme_file_uri('img/mv-pc.png')); ?>" alt="PC画像">
+      <img class="mainVisual__image mainVisual__image--desk" src="<?php echo esc_url(get_theme_file_uri('img/mv-desk.png')); ?>" alt="デスク画像">
+      <img class="mainVisual__image mainVisual__image--light" src="<?php echo esc_url(get_theme_file_uri('img/mv-light.png')) ?>" alt="電球の画像">
+    </div><!-- mainVisual -->
+
 
     <section id="js_topWorks" class="top-works">
       <div class="top-works__inner c-sectionPadding">
@@ -59,6 +60,12 @@
                   </div>
                 </a>
               </li>
+
+
+
+
+
+
               <li class="splide__slide top-works__cardItem c-worksCard">
                 <a class="c-worksCard__link" href="#">
                   <div class="c-worksCard__image">
@@ -129,6 +136,10 @@
                   </div>
                 </a>
               </li>
+
+
+
+
             </ul>
           </div>
           <div class="splide__arrows">
