@@ -19,7 +19,7 @@ JSファイルの読み込み
 function my_enqueue_scripts() {
   // 全ページで読み込み(fontAwesome // common)
   wp_enqueue_script('fontawesome', 'https://kit.fontawesome.com/6f9cf09e6e.js', array(), null, true);
-  wp_enqueue_script('common', get_template_directory_uri() . '/js/common.js', array(), null, true);
+  wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', array(), null, true);
 
   //topページ用のJSファイルの読み込み（splide // toppage)
   if (is_home() || is_front_page()) {
@@ -28,9 +28,10 @@ function my_enqueue_scripts() {
   }
 
   //serviceページのみのjSファイル読み込み（service）
-  if (is_page('service.php')) {
+  // if (is_page('service')) {
+  //   error_log('Serviceページです'); // デバッグ用
     wp_enqueue_script('service', get_template_directory_uri() . '/js/service.js', array(), null, true);
-  }
+//   }
 }
 
 add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
