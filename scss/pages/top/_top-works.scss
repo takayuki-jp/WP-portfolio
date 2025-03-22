@@ -9,8 +9,12 @@
 .top-works {
 
   .splide__slide {
-    margin: 54px auto 80px;
+    height: fit-content;
+    // margin: 54px auto 80px;
     max-width: 1080px;
+  }
+  .splide__list {
+    height: auto;
   }
   .splide__slide > a {
     margin: 0 auto;
@@ -28,22 +32,20 @@
 
 
 
-  .top-works-pagination {
+  .splide__pagination  {
     bottom: -1.5em;
   }
 
-  .top-works-page {
+  .splide__pagination__page {
     background-color: $gray;
     width: 12px;
     height: 12px;
+    margin: 0 8px;
   }
 
-  .top-works-page.is-active {
+  .splide__pagination__page.is-active {
     background-color: $mainColor;
     transform: scale(1.2);
-  }
-  .top-works-pagination li {
-    margin: 0 8px;
   }
 
   .splide__arrow {
