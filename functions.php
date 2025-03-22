@@ -1,5 +1,7 @@
 <?php
-
+error_log(get_template_directory_uri() . '/js/toppage.js');
+error_log('Script path: ' . get_template_directory_uri() . '/js/toppage.js');
+error_log('my_enqueue_scripts is being executed'); // デバッグ用ログ
 /**************************************************
 CSSファイルの読み込み
 **************************************************/
@@ -23,21 +25,20 @@ function my_enqueue_scripts() {
 
   //topページ用のJSファイルの読み込み（splide // toppage)
   if (is_home() || is_front_page()) {
+    error_log('toppage.js is being loaded'); // デバッグ用ログ
     wp_enqueue_script('splide', 'https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js', array(), null, true);
-    wp_enqueue_script('topPage', get_template_directory_uri() . '/js/topPage.js', array('splide'), null, true);
+    wp_enqueue_script('toppage', get_template_directory_uri() . '/js/toppage.js', array('splide'), null, true);
   }
 
   //serviceページのみのjSファイル読み込み（service）
-  if (is_page('service.php')) {
+  if (is_page('service')) {
     wp_enqueue_script('service', get_template_directory_uri() . '/js/service.js', array(), null, true);
   }
 }
-
 add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
 
-
 /**************************************************
-　OGPの設定
+ 　OGPの設定
 **************************************************/
 function add_ogp_meta_tags() {
   $site_name = get_bloginfo('name');
@@ -78,4 +79,3 @@ add_theme_support('post-thumbnails');
 /********** contact form7 改行禁止 ***********/
 add_filter('wpcf7_autop_or_not', '__return_false');
 
-?>
