@@ -20,23 +20,172 @@
   }
 }
 
-.archiveList__pager {
+
+
+//ページネーション
+.nav-links {
   margin-top: 48px;
-  text-align: left;
+  text-align: center;
+  color: $black;
 }
 
-.archiveList__pagerList {
-  display: flex;
-  justify-content: center;
-  gap: 32px;
+.nav-links .prev,
+.nav-links .next {
+  color: $mainColor;
+}
+.nav-links .prev::after,
+.nav-links .next::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+  width: 30px;
+  height: 30px;
+  transform: translateX(-50%, -50%);
+  transform-origin: center;
+  background-color: $mainColor;
+  border-radius: 41% 59% 43% 57% / 52% 30% 70% 48%;
+  z-index: -1;
 }
 
-.archiveList__pagerLink {
+.nav-links .prev:hover,
+.nav-links .next:hover {
+  color: #fff;
+  opacity: 1;
+}
+.nav-links .prev:hover::after,
+.nav-links .next:hover::after {
+  display: block;
+}
+
+//prevの動き
+.nav-links .prev:hover i {
+  animation: toLeft 1.5s linear infinite;
+}
+@keyframes toLeft {
+  0% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  25% {
+    transform: translateX(-60%);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-70%);
+    opacity: 1;
+  }
+  75% {
+    transform: translateX(-80%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-90%);
+    opacity: 0;
+  }
+}
+.nav-links .prev:hover::after {
+  animation: rollToLeft 1.5s linear infinite;
+}
+@keyframes rollToLeft {
+  0% {
+    transform: translate(-50%, -50%) rotate(72deg);
+    opacity: 0;
+  }
+  25% {
+    transform: translate(-60%, -50%) rotate(144deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-70%, -50%) rotate(216deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(-80%, -50%) rotate(288deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-90%, -50%) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+//nextの動き
+.nav-links .next:hover i {
+  animation: toRight 2s linear infinite;
+}
+@keyframes toRight {
+  0% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  25% {
+    transform: translateX(-40%);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-30%);
+    opacity: 1;
+  }
+  75% {
+    transform: translateX(-20%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-10%);
+    opacity: 0;
+  }
+}
+.nav-links .next:hover::after {
+  animation: rollToRight 2s linear infinite;
+}
+@keyframes rollToRight {
+  0% {
+    transform: translate(-70%, -50%) rotate(72deg);
+    opacity: 0;
+  }
+  25% {
+    transform: translate(-60%, -50%) rotate(144deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(216deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(-45%, -50%) rotate(288deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-40%, -50%) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+
+.page-numbers {
+  margin: 0 16px;
   position: relative;
   font-size: 2rem;
   font-family: 'Open Sans';
+  transition: all 1.5s ease;
+  @media screen and (max-width: 600px) {
+    margin: 0 8px;
+  }
 }
-.archiveList__pagerLink::after {
+.page-numbers:hover {
+  font-weight: bold;
+  color: $mainColor;
+  opacity: 1;
+}
+.page-numbers.current {
+  color: #fff;
+  font-weight: 500;
+  background-color: $mainColor;
+}
+
+.page-numbers::after {
   content: "";
   position: absolute;
   top: 0;
@@ -49,12 +198,6 @@
   border-radius: 41% 59% 43% 57% / 52% 30% 70% 48%;
   z-index: -1;
 }
-
-.archiveList__pagerLink.active {
-  color: #fff;
-  font-weight: 500;
-  background-color: $mainColor;
-}
-.archiveList__pagerLink.active::after {
+.page-numbers.current::after {
   display: block;
 }

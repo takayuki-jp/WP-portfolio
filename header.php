@@ -21,7 +21,7 @@
         <div class="header__menuL">
           <ul class="header__menuL-list">
             <li class="header__menuL-listItem">
-              <a class="header__menuLink header__menuLink--arrowR" href="<?php echo esc_url(home_url('/archive--works/')); ?>"><span>works</span></a>
+              <a class="header__menuLink header__menuLink--arrowR" href="<?php echo esc_url(home_url('/archive/')); ?>"><span>works</span></a>
             </li>
             <li class="header__menuL-listItem">
               <a class="header__menuLink header__menuLink--arrowR" href="<?php echo esc_url(home_url('/service.html/')); ?>"><span>service</span></a>
