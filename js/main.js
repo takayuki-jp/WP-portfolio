@@ -118,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-//topページ__top-worksのsilde(splide.js)
+//topページ__top-worksのslide(splide.js)
 document.addEventListener("DOMContentLoaded", function() {
   new Splide(".splide", {
     autoplay: true,

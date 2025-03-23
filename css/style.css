@@ -390,11 +390,11 @@ a:hover {
 .header {
   background: -webkit-gradient(linear, left top, right top, from(#C2E9FB), to(#A1C4FD));
   background: linear-gradient(90deg, #C2E9FB, #A1C4FD);
-  -webkit-animation: apper 1s ease;
-          animation: apper 1s ease;
+  -webkit-animation: appear 1s ease;
+          animation: appear 1s ease;
 }
 
-@-webkit-keyframes apper {
+@-webkit-keyframes appear {
   from {
     opacity: 0;
   }
@@ -403,7 +403,7 @@ a:hover {
   }
 }
 
-@keyframes apper {
+@keyframes appear {
   from {
     opacity: 0;
   }
@@ -1388,12 +1388,12 @@ a:hover {
           transition-delay: 0.5s;
 }
 
-.top-about__cooment {
+.top-about__comment {
   margin-bottom: 1em;
   line-height: 1.7;
 }
 
-.top-about__cooment.animeTrigger {
+.top-about__comment.animeTrigger {
   -webkit-animation-delay: 2s;
           animation-delay: 2s;
 }

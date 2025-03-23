@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
     <main class="page-archive">
-      <section class="arichiveList">
+      <section class="archiveList">
         <div class="archiveList__inner c-sectionPadding">
           <div class="c-sectionTitleWrap">
-            <h1 class="arichiveList__title c-sectionTitle"><span>A</span>rchive</h1>
+            <h1 class="archiveList__title c-sectionTitle"><span>A</span>rchive</h1>
             <p class="archiveList__subTitle c-sectionSubTitle">制作作品の一覧</p>
           </div>
 
