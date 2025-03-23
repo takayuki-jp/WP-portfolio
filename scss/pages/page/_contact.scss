@@ -26,13 +26,12 @@
 .wpcf7-form {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 48px;
   max-width: 700px;
   margin: 96px auto 0;
   @include sp {
     margin: 40px auto 0;
     flex-direction: column;
-    gap: 56px;
   }
 }
 .wpcf7__label {
@@ -42,6 +41,7 @@
   @include sp {
     flex-direction: column;
     align-items: flex-start;
+    gap: 8px;
   }
 }
 .wpcf7__labelArea {
@@ -60,7 +60,6 @@
   gap: 8px;
   font-size: 2.4rem;
   @include sp {
-    // width: 100%;
     font-size: 1.6rem;
     text-align: left;
   }
@@ -101,6 +100,9 @@
   @include sp {
     width: 100%;
   }
+}
+.wpcf7 select[name="select-449"] {
+  min-width: 200px !important;
 }
 .wpcf7__label select option {
   color: $black;

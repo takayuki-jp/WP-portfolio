@@ -72,6 +72,14 @@ function post_has_archive($args, $post_type) {
 add_filter('register_post_type_args', 'post_has_archive', 10, 2);
 
 
+add_action('pre_get_posts', function($query) {
+    if ($query->is_main_query() && !is_admin() && $query->is_archive()) {
+        error_log('アーカイブページのクエリが実行されています');
+        error_log('投稿数: ' . $query->found_posts);
+    }
+});
+
+
 /********** サムネイルの有効化 ***********/
 add_theme_support('post-thumbnails');
 
