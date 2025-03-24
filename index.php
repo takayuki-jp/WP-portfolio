@@ -53,7 +53,7 @@ if (is_front_page()) {
       </div>
 
       <!-- splide area -->
-      <div class="splide top-works__slide " role="group" aria-label="Splideの基本的なHTML">
+      <div class="splide top-works__slide" role="group" aria-label="Splideの基本的なHTML">
         <div class="splide__track">
           <ul class="splide__list">
 

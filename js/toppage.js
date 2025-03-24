@@ -28,22 +28,19 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 //topページ__top-worksのslide(splide.js)
+let splideInitialized = false;
+
 document.addEventListener("DOMContentLoaded", function() {
-  if (typeof Splide === "undefined") {
-    console.error("Splide.js is not loaded.");
-    return;
-  }
-
-  console.log("Splide.js is loaded and initializing...");
-
   new Splide(".splide", {
     type: "loop",
-    autoplay: true,
+    autoplay: false,
     interval: 3000,
     speed: 400,
     perPage: 3,
+    perMove: 1,
     focus: "center",
-    trimSpace: false,
+    trimSpace: true,
+    pagination: true,
     breakpoints: {
       800: {
         perPage: 2,
@@ -52,10 +49,11 @@ document.addEventListener("DOMContentLoaded", function() {
         perPage: 1,
       },
     },
-  }).mount();
+  });
 
-  console.log("Splide.js initialization complete.");
+  splide.mount();
 });
+
 
 //topページ__セクションのフェードイン
 document.addEventListener('DOMContentLoaded', function() {
