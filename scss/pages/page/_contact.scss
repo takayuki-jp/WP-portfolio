@@ -109,6 +109,8 @@
 }
 .wpc7__label--select {
   position: relative;
+  width: 100%;
+  max-width: 400px;
 }
 .wpc7__label--select::after {
   content: "\f107";
@@ -130,6 +132,12 @@
 }
 .wpcf7__label--detail .wpcf7__labelArea {
   margin-top: 8px;
+}
+
+.wpcf7-not-valid-tip {
+  position: absolute;
+  bottom: -1.5em;
+  left: 0;
 }
 
 .wpcf7__consent {

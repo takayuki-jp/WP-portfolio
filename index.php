@@ -161,11 +161,11 @@ if (is_front_page()) {
       <div class="top-service__usedTool animeTarget fadeIn">
         <p class="top-service__usedToolTitle">主な使用ツール</p>
         <ul class="top-service__toolList">
-          <li class="top-service__toolListItem top-service__toolListItem--code">VSCode</li>
-          <li class="top-service__toolListItem top-service__toolListItem--code">WordPress</li>
-          <li class="top-service__toolListItem top-service__toolListItem--code">Local</li>
-          <li class="top-service__toolListItem top-service__toolListItem--design">Fimga</li>
-          <li class="top-service__toolListItem top-service__toolListItem--design">photoshop</li>
+          <li class="top-service__toolListItem c-toolTag c-toolTag--code">VSCode</li>
+          <li class="top-service__toolListItem c-toolTag c-toolTag--code">WordPress</li>
+          <li class="top-service__toolListItem c-toolTag c-toolTag--code">Local</li>
+          <li class="top-service__toolListItem c-toolTag c-toolTag--design">Fimga</li>
+          <li class="top-service__toolListItem c-toolTag c-toolTag--design">photoshop</li>
         </ul>
       </div>
 
@@ -186,20 +186,20 @@ if (is_front_page()) {
           <img src="<?php echo esc_url(get_theme_file_uri('img/my-image.png')) ?>" alt="わたしのアイコンの画像">
         </div>
         <div class="top-about__commentWrap animeTarget slideInRtoL">
-          <p class="top-about__cooment">
+          <p class="top-about__comment">
             はじめまして。ポートフォリオサイトへお越しいただきありがとうございます。<br>
             WEBデザイナーのたかゆきと申します。<br>
             こちらのWEBサイトでは過去の実績を紹介しております。<br>
             案件依頼の参考になれば幸いです。<br>
           </p>
-          <p class="top-about__cooment">
+          <p class="top-about__comment">
             「時間や場所に囚われない、自分らしい働き方」を目指して、大好きなパソコンを使って夢の実現に向け、日々勉強に励んでおります。<br>
           </p>
-          <p class="top-about__cooment">
+          <p class="top-about__comment">
             これまでは接客業を中心に活動。
             現在は東京在住、ECサイト（makeshop）のデザイン、コード保守を担当。
           </p>
-          <p class="top-about__cooment">
+          <p class="top-about__comment">
             メルカリの画像制作や、専門学校のバナー制作、最近ではLP制作やWEBサイト制作へ活動の幅を増やせるよう積極的に活動をしております。
           </p>
         </div>

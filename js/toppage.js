@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-//topページ__top-worksのsilde(splide.js)
+//topページ__top-worksのslide(splide.js)
 document.addEventListener("DOMContentLoaded", function() {
   if (typeof Splide === "undefined") {
     console.error("Splide.js is not loaded.");
