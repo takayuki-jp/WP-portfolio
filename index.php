@@ -161,11 +161,11 @@ if (is_front_page()) {
       <div class="top-service__usedTool animeTarget fadeIn">
         <p class="top-service__usedToolTitle">主な使用ツール</p>
         <ul class="top-service__toolList">
-          <li class="top-service__toolListItem top-service__toolListItem--code">VSCode</li>
-          <li class="top-service__toolListItem top-service__toolListItem--code">WordPress</li>
-          <li class="top-service__toolListItem top-service__toolListItem--code">Local</li>
-          <li class="top-service__toolListItem top-service__toolListItem--design">Fimga</li>
-          <li class="top-service__toolListItem top-service__toolListItem--design">photoshop</li>
+          <li class="top-service__toolListItem c-toolTag c-toolTag--code">VSCode</li>
+          <li class="top-service__toolListItem c-toolTag c-toolTag--code">WordPress</li>
+          <li class="top-service__toolListItem c-toolTag c-toolTag--code">Local</li>
+          <li class="top-service__toolListItem c-toolTag c-toolTag--design">Fimga</li>
+          <li class="top-service__toolListItem c-toolTag c-toolTag--design">photoshop</li>
         </ul>
       </div>
 
