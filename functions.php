@@ -87,3 +87,13 @@ add_theme_support('post-thumbnails');
 /********** contact form7 改行禁止 ***********/
 add_filter('wpcf7_autop_or_not', '__return_false');
 
+
+
+/********** サムネイル画像にライトボックス機能を追加 ***********/
+add_filter('post_thumbnail_html', 'add_lightbox_to_featured_image', 10, 5);
+function add_lightbox_to_featured_image($html, $post_id, $post_thumbnail_id, $size, $attr) {
+    $full_image_url = wp_get_attachment_image_src($post_thumbnail_id, 'full');
+    $html = str_replace('<img', '<img data-lightbox="featured-image"', $html);
+    $html = '<a href="' . $full_image_url[0] . '" data-lightbox="featured-image">' . $html . '</a>';
+    return $html;
+}
