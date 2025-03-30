@@ -1,5 +1,5 @@
 <div class="toTop">
-  <a class="toTop__link" href="<?php echo esc_url(home_url()) ?>"><i class="fa-solid fa-arrow-up"></i></a>
+  <a class="toTop__link" href="#"><i class="fa-solid fa-arrow-up"></i></a>
 </div>
 <footer class="footer">
   <div class="footer__upper">

@@ -1,8 +1,7 @@
 //サービスページのみで使用するスクリプト
-
+document.addEventListener("DOMContentLoaded", function() {
 
 //serviceページ__タブコンテンツの表示
-document.addEventListener("DOMContentLoaded", function() {
   const serviceLinks = document.querySelectorAll(".service__link");
   const sections= document.querySelectorAll(".service__section");
 
@@ -22,4 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
       targetSection.classList.add("active");
     });
   });
+
+
+
 });

@@ -154,6 +154,9 @@
   text-align: center;
   flex-grow: 1;
 }
+.c-worksCard__titleWrap {
+  text-align: center;
+}
 .c-worksCard__client {
   font-size: 1.6rem;
   line-height: 1.6;
@@ -168,6 +171,11 @@
     font-size: 1.6rem;
   }
 }
+.c-worksCard__category {
+  display: inline-block;
+  margin: 0 auto;;
+}
+
 
 
 //c-categoryTag

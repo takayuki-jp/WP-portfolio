@@ -3,9 +3,9 @@
 
 .header {
   @include gradientBlue;
-  animation: apper 1s ease;
+  animation: appear 1s ease;
 }
-@keyframes apper {
+@keyframes appear {
   from {
     opacity: 0;
   }

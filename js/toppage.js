@@ -1,8 +1,6 @@
-//トップページのみで使用するスクリプト
-console.log('toppage.js is loaded and running');
-
 //topページ__mainVisual内のページ内リンク
 document.addEventListener("DOMContentLoaded", function() {
+
   const header = document.querySelector('.header');
   if (!header) return; // 要素が存在しない場合は処理を中断
   const links = document.querySelectorAll('.pageLink__link, .header__menuLink--arrowB');
@@ -25,13 +23,12 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   });
-});
 
-//topページ__top-worksのslide(splide.js)
-let splideInitialized = false;
 
-document.addEventListener("DOMContentLoaded", function() {
-  new Splide(".splide", {
+  //topページ__top-worksのslide(splide.js)
+  let splideInitialized = false;
+
+  const splide = new Splide(".splide", {
     type: "loop",
     autoplay: false,
     interval: 3000,
@@ -41,6 +38,8 @@ document.addEventListener("DOMContentLoaded", function() {
     focus: "center",
     trimSpace: true,
     pagination: true,
+    clones: 4,
+    cloneStatus: false,
     breakpoints: {
       800: {
         perPage: 2,
@@ -52,11 +51,10 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   splide.mount();
-});
 
 
-//topページ__セクションのフェードイン
-document.addEventListener('DOMContentLoaded', function() {
+
+  //topページ__セクションのフェードイン
   const animeTargets = document.querySelectorAll(".animeTarget");
 
   animeTargets.forEach(animeTarget => {
@@ -77,6 +75,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     observer.observe(animeTarget);
   });
+
+
+
 });
 
 

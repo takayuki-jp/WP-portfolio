@@ -4,7 +4,7 @@
 @charset "UTF-8";
 @use '../util/index' as *;
 
-/* コンパイル */
+/* はみ出し確認 */
 //  * {
 //   outline: 2px red solid;
 //   }
@@ -13,12 +13,6 @@
 .wrap {
   overflow: hidden;
 }
-
-// section {
-//   overflow-x: hidden;
-//   overflow-y: visible;
-// }
-
 
 
 /* base
@@ -52,15 +46,24 @@ body {
   box-sizing: border-box;
   transition: all .3s ease;
   overflow-x: hidden;
+  opacity: 0;
+  transition: opacity .5s ease;
+}
+body.loaded {
+  opacity: 1;
 }
 
 main {
   flex: 1;
 }
 
+a {
+  transition: opacity .5s ease-in-out;
+}
+
+
 a:hover {
   opacity: .6;
-  transition: opacity .5s ease-in-out;
   cursor: pointer;
 }
 
