@@ -20,7 +20,7 @@
   max-width: 800px;
   margin: 0 auto;
 }
-.worksImage > img {
+.worksImage img {
   width: 100%;
   height: auto;
 }
@@ -47,6 +47,14 @@
   display: flex;
   margin-top: 4px;
 }
+.worksInfo__dateList--link dd {
+  color: $mainColor;
+  font-weight: 500;
+}
+.worksInfo__dateList--link .fa-up-right-from-square {
+  margin-left: 4px;;
+}
+
 .worksInfo__dateTitle {
   display: flex;
   justify-content: center;
@@ -64,6 +72,10 @@
 }
 .worksInfo__dateDesc {
   flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 8px;
+  column-gap: 4px;
   padding: 8px 16px;
   background-color: #fff;
   @include boxShadow;
@@ -80,6 +92,18 @@
 }
 .worksInfo__comment p {
   line-height: 1.6;
+}
+
+.worksInfo__comment ul {
+  margin-top: 16px;
+  padding: 8px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.worksInfo__comment li:not(:first-child) {
+  font-size: 14px;
+  margin-top: 8px;
 }
 
 .articlePager {

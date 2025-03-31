@@ -39,7 +39,7 @@
       <div class="worksInfo">
         <div class="worksInfo__dataListWrap">
           <?php if (get_field('date_create')) : ?>
-            <dl class="worksInfo__dateList">
+            <dl class="worksInfo__dateList worksInfo__dateList--dateCreate">
               <dt class="worksInfo__dateTitle">制作日</dt>
               <dd class="worksInfo__dateDesc">
                 <?php the_field('date_create'); ?>
@@ -48,16 +48,16 @@
           <?php endif; ?>
 
           <?php if (get_field('work_days')) : ?>
-            <dl class="worksInfo__dateList">
+            <dl class="worksInfo__dateList worksInfo__dateList--workDays">
               <dt class="worksInfo__dateTitle">制作日数</dt>
               <dd class="worksInfo__dateDesc">
-                <?php the_field('work_days'); ?>
+                <?php the_field('work_days'); ?><span>日</span>
               </dd>
             </dl>
           <?php endif; ?>
 
           <?php if (get_field('tools')) : ?>
-            <dl class="worksInfo__dateList">
+            <dl class="worksInfo__dateList worksInfo__dateList--tools">
               <dt class="worksInfo__dateTitle">使用ツール</dt>
               <dd class="worksInfo__dateDesc">
                 <?php
@@ -82,10 +82,10 @@
 
 
           <?php if (get_field('web_link')) : ?>
-            <dl class="worksInfo__dateList">
+            <dl class="worksInfo__dateList worksInfo__dateList--link">
               <dt class="worksInfo__dateTitle">リンク</dt>
               <dd class="worksInfo__dateDesc">
-                <a href="<?php the_field('web_link'); ?>" target="_blank" rel="noopener noreferrer">サイトを見る</a>
+                <a href="<?php the_field('web_link'); ?>" target="_blank" rel="noopener noreferrer">サイトを見る<i class="fa-solid fa-up-right-from-square"></i></a>
               </dd>
             </dl>
           <?php endif; ?>

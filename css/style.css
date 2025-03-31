@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* dode-checkeで作成中。 */
+/* code-checkeで作成中。 */
 /* 新たな環境からのpushテスト */
 /* はみ出し確認 */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap");
@@ -265,7 +265,7 @@
 
 .c-toolTag {
   display: inline-block;
-  padding: 8px 16px;
+  padding: 6px 8px;
   font-family: "Open Sans";
   font-size: 1.6rem;
   font-weight: 600;
@@ -1908,7 +1908,7 @@ a:hover {
   margin: 0 auto;
 }
 
-.worksImage > img {
+.worksImage img {
   width: 100%;
   height: auto;
 }
@@ -1955,6 +1955,15 @@ a:hover {
   margin-top: 4px;
 }
 
+.worksInfo__dateList--link dd {
+  color: #A1C4FD;
+  font-weight: 500;
+}
+
+.worksInfo__dateList--link .fa-up-right-from-square {
+  margin-left: 4px;
+}
+
 .worksInfo__dateTitle {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1981,6 +1990,15 @@ a:hover {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  row-gap: 8px;
+  -webkit-column-gap: 4px;
+     -moz-column-gap: 4px;
+          column-gap: 4px;
   padding: 8px 16px;
   background-color: #fff;
   -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
@@ -2002,6 +2020,18 @@ a:hover {
 
 .worksInfo__comment p {
   line-height: 1.6;
+}
+
+.worksInfo__comment ul {
+  margin-top: 16px;
+  padding: 8px;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.worksInfo__comment li:not(:first-child) {
+  font-size: 14px;
+  margin-top: 8px;
 }
 
 .articlePager {
