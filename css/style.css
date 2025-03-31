@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* create-toppageのbranchで作成中。 */
 /* 新たな環境からのpushテスト */
-/* コンパイル */
+/* はみ出し確認 */
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap");
 /* variables */
 /* color */
@@ -35,6 +35,7 @@
   position: relative;
   font-family: "Open Sans";
   font-size: 3.6rem;
+  letter-spacing: 0.05em;
 }
 
 .c-sectionTitle > span {
@@ -204,6 +205,10 @@
           flex-grow: 1;
 }
 
+.c-worksCard__titleWrap {
+  text-align: center;
+}
+
 .c-worksCard__client {
   font-size: 1.6rem;
   line-height: 1.6;
@@ -222,6 +227,11 @@
   .c-worksCard__title {
     font-size: 1.6rem;
   }
+}
+
+.c-worksCard__category {
+  display: inline-block;
+  margin: 0 auto;
 }
 
 .c-categoryTag {
@@ -361,6 +371,13 @@ body {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   overflow-x: hidden;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+}
+
+body.loaded {
+  opacity: 1;
 }
 
 main {
@@ -369,10 +386,13 @@ main {
           flex: 1;
 }
 
-a:hover {
-  opacity: 0.6;
+a {
   -webkit-transition: opacity 0.5s ease-in-out;
   transition: opacity 0.5s ease-in-out;
+}
+
+a:hover {
+  opacity: 0.6;
   cursor: pointer;
 }
 
@@ -799,7 +819,9 @@ a:hover {
   background-color: #A1C4FD;
   border: 1px solid #fff;
   border-radius: 50%;
-  opacity: 0.5;
+  opacity: 0;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
   -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
   transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
   transition: transform 0.5s ease, opacity 0.5s ease;
@@ -807,13 +829,29 @@ a:hover {
   z-index: 10;
 }
 
-.toTop__link:hover,
-.toTop__link.active {
-  -webkit-transform: translateY(-16px) !important;
-          transform: translateY(-16px) !important;
-  opacity: 1 !important;
+.toTop__link.fix {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 0.6;
 }
 
+/* ホバー可能な場合 */
+@media (hover: hover) {
+  .toTop__link:hover,
+  .toTop__link.active {
+    -webkit-transform: translateY(-16px);
+            transform: translateY(-16px);
+    opacity: 1;
+  }
+}
+/* ホバー不可な場合 */
+@media (hover: none) {
+  .toTop__link.active {
+    -webkit-transform: translateY(-16px);
+            transform: translateY(-16px);
+    opacity: 1;
+  }
+}
 .toTop__link > i {
   line-height: 44px;
 }
@@ -1268,6 +1306,7 @@ a:hover {
   border-radius: 10px;
   -webkit-box-shadow: 6px 4px 0 0 #E5EFFF, 0 0 5px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 6px 4px 0 0 #E5EFFF, 0 0 5px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 @media screen and (max-width: 720px) {
   .top-service__listItem {
@@ -1366,6 +1405,7 @@ a:hover {
           align-items: flex-start;
   gap: 32px;
   margin: 0 32px;
+  overflow: hidden;
 }
 @media screen and (max-width: 720px) {
   .top-about__contentWrap {
@@ -1405,6 +1445,7 @@ a:hover {
           transform: translateX(50px);
   -webkit-transition-delay: 0.5s;
           transition-delay: 0.5s;
+  overflow: hidden;
 }
 
 .top-about__comment {
@@ -1451,6 +1492,7 @@ a:hover {
   max-width: 200px;
   min-width: 150px;
   height: auto;
+  overflow: hidden;
 }
 
 .top-contact__image > img {
@@ -2027,6 +2069,11 @@ a:hover {
 .articlePager__link--next::before {
   content: "\f054";
   right: 0;
+}
+
+/* ポップアップ画像のタイトルを非表示 */
+.fancybox-title-over #fancybox-title {
+  display: none;
 }
 
 .service__list {

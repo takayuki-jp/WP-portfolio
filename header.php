@@ -24,10 +24,17 @@
               <a class="header__menuLink header__menuLink--arrowR" href="<?php echo esc_url(home_url('/archive/')); ?>"><span>works</span></a>
             </li>
             <li class="header__menuL-listItem">
-              <a class="header__menuLink header__menuLink--arrowR" href="<?php echo esc_url(home_url('/service.html/')); ?>"><span>service</span></a>
+              <a class="header__menuLink header__menuLink--arrowR" href="<?php echo esc_url(home_url('/service/')); ?>"><span>service</span></a>
             </li>
             <li class="header__menuL-listItem">
-              <a class="header__menuLink header__menuLink--arrowB" href="<?php echo esc_url(home_url('/#js_topAbout/')); ?>"><span>about</span></a>
+              <a class="header__menuLink header__menuLink--arrowB" href="<?php
+                if (is_front_page()) {
+                  echo esc_url('#js_topAbout');
+                } else {
+                  echo esc_url(home_url('/#js_topAbout'));
+                }
+              ?>">
+                <span>about</span></a>
             </li>
           </ul>
         </div>
@@ -43,11 +50,12 @@
       </button>
     </div>
 
+    <!-- スマホメニュー -->
     <nav class="sp-menu">
       <div class="sp-menu__inner">
         <ul class="sp-menu__list">
           <li class="sp-menu__listItem">
-            <a class="sp-menu__link" href="<?php echo esc_url(home_url('/archive--works/')); ?>">works</a>
+            <a class="sp-menu__link" href="<?php echo esc_url(home_url('/archive/')); ?>">works</a>
           </li>
           <li class="sp-menu__listItem">
             <a class="sp-menu__link" href="<?php echo esc_url(home_url('/service/')); ?>">service</a>

@@ -14,16 +14,33 @@
   background-color: $mainColor;
   border: 1px solid #fff;
   border-radius: 50%;
-  opacity: .5;
-  transition: transform .5s ease, opacity .5s ease;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: transform 0.5s ease, opacity 0.5s ease;
   z-index: 10;
 }
-
-.toTop__link:hover,
-.toTop__link.active {
-  transform: translateY(-16px) !important;
-  opacity: 1 !important;
+.toTop__link.fix {
+  transform: translateY(0);
+  opacity: .6;
 }
+
+/* ホバー可能な場合 */
+@media (hover: hover) {
+  .toTop__link:hover,
+  .toTop__link.active {
+    transform: translateY(-16px);
+    opacity: 1;
+  }
+}
+
+/* ホバー不可な場合 */
+@media (hover: none) {
+  .toTop__link.active {
+    transform: translateY(-16px);
+    opacity: 1;
+  }
+}
+
 
 .toTop__link >i {
   line-height: 44px;

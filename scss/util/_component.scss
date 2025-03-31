@@ -26,6 +26,7 @@
   position: relative;
   font-family: "Open Sans";
   font-size: 3.6rem;
+  letter-spacing: 0.05em;
 }
 .c-sectionTitle > span {
   font-size: 4rem;
@@ -154,6 +155,9 @@
   text-align: center;
   flex-grow: 1;
 }
+.c-worksCard__titleWrap {
+  text-align: center;
+}
 .c-worksCard__client {
   font-size: 1.6rem;
   line-height: 1.6;
@@ -168,6 +172,11 @@
     font-size: 1.6rem;
   }
 }
+.c-worksCard__category {
+  display: inline-block;
+  margin: 0 auto;;
+}
+
 
 
 //c-categoryTag

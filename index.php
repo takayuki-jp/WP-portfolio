@@ -53,7 +53,7 @@ if (is_front_page()) {
       </div>
 
       <!-- splide area -->
-      <div class="splide top-works__slide " role="group" aria-label="Splideの基本的なHTML">
+      <div class="splide top-works__slide animeTarget fadeIn" role="group" aria-label="Splideの基本的なHTML">
         <div class="splide__track">
           <ul class="splide__list">
 
@@ -83,13 +83,13 @@ if (is_front_page()) {
                     <?php endif; ?>
                     <p class="c-worksCard__title"><?php the_title(); ?></p>
                   </div>
-                  <div class="c-worksCard__category c-worksCard__category--website">
-                    <?php
+                  <div class="c-worksCard__category c-categoryTag c-categoryTag--<?php
                     $categories = get_the_category();
-                    if(!empty($categories)) {
-                      echo esc_html($categories[0]->name);
-                    }
-                    ?>
+                    $category_slug = !empty($categories) ? esc_attr($categories[0]->slug) : '';
+                    $category_name = !empty($categories) ? esc_html($categories[0]->name) : '';
+                    echo $category_slug;
+                    ?>">
+                    <span><?php echo $category_name; ?></span>
                   </div>
                 </a>
               </li>
@@ -103,7 +103,7 @@ if (is_front_page()) {
       </div>
 
       <div class="top-works__btnWrap c-btnWrap">
-        <a class="top-works__btnLink c-btn" href="<?php echo esc_url(home_url('/works/')); ?>">more</a>
+        <a class="top-works__btnLink c-btn" href="<?php echo esc_url(home_url('/archive/')); ?>">more</a>
       </div>
     </div><!--top-works__inner-->
   </section><!--top-works-->
@@ -170,7 +170,7 @@ if (is_front_page()) {
       </div>
 
       <div class="top-service__btnWrap c-btnWrap">
-        <a class="top-service__btnLink c-btn" href="./service.html">more</a>
+        <a class="top-service__btnLink c-btn" href="<?php echo esc_url(home_url('/service/')); ?>">more</a>
       </div>
     </div>
   </section>
@@ -231,7 +231,7 @@ if (is_front_page()) {
       </div>
 
       <div class="top-service__btnWrap c-btnWrap">
-        <a class="top-service__btnLink c-btn" href="./service.html">contact</a>
+        <a class="top-service__btnLink c-btn" href="<?php echo esc_url(home_url('/contact/'))  ?>">contact</a>
       </div>
     </div>
   </section>
