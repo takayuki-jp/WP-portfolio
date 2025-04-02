@@ -1,6 +1,15 @@
 <?php get_header(); ?>
 
 <main class="page-works">
+
+  <!-- パンくずリスト -->
+  <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+  <?php if (function_exists('bcn_display'))
+  {
+      bcn_display();
+  } ?>
+  </div>
+
   <div class="works__inner c-sectionPadding ">
     <div class="c-sectionTitleWrap">
       <h1 class="works__title c-sectionTitle"><span>W</span>orks</h1>
@@ -51,7 +60,7 @@
             <dl class="worksInfo__dateList worksInfo__dateList--workDays">
               <dt class="worksInfo__dateTitle">制作日数</dt>
               <dd class="worksInfo__dateDesc">
-                <?php the_field('work_days'); ?><span>日</span>
+                <?php the_field('work_days'); ?>
               </dd>
             </dl>
           <?php endif; ?>

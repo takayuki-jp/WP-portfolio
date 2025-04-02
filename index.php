@@ -79,7 +79,7 @@ if (is_front_page()) {
                   </div>
                   <div class="c-worksCard__titleWrap">
                     <?php if (get_field('client')) : ?>
-                      <p class="c-worksCard__client"><?php the_field('client'); ?></p>
+                      <p class="c-worksCard__client"><?php the_field('client'); ?><span>様</span></p>
                     <?php endif; ?>
                     <p class="c-worksCard__title"><?php the_title(); ?></p>
                   </div>

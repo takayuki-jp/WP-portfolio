@@ -48,7 +48,7 @@
   @include CenterX;
   display: inline-block;
   background-color: #fff;
-  border-radius: 16px;
+  border-radius: 8px;
   @include boxShadow;
   z-index: 1;
   @include sp {
@@ -92,7 +92,7 @@
   @include CenterX;
   height: fit-content;
   background-color: $mainColor;
-  z-index: 100;
+  z-index: 49;
   animation: fadeIn 1.5s ease;
   @include sp {
     top: 50px;

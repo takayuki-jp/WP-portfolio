@@ -1,6 +1,14 @@
 <?php get_header(); ?>
 
     <main class="page-archive">
+
+    <!-- パンくずリスト -->
+    <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+    <?php if (function_exists('bcn_display'))
+    {
+        bcn_display();
+    } ?>
+
       <section class="archiveList">
         <div class="archiveList__inner c-sectionPadding">
           <div class="c-sectionTitleWrap">

@@ -4,8 +4,8 @@
 //トップに戻るボタン
 .toTop__link {
   position: fixed;
-  bottom: 1em;
-  right: 1em;
+  bottom: 3em;
+  right: 4em;
   display: inline-block;
   width: 48px;
   height: 48px;
@@ -18,6 +18,10 @@
   transform: translateY(100px);
   transition: transform 0.5s ease, opacity 0.5s ease;
   z-index: 10;
+  @include sp {
+    bottom: 1em;
+    right: 1em;
+  }
 }
 .toTop__link.fix {
   transform: translateY(0);

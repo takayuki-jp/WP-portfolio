@@ -123,20 +123,16 @@
               <div class="svSection__price">
                 <h3 class="svSection__priceTitle">料金一例</h3>
                 <dl class="svSection__priceDefList">
-                  <dt class="svSection__priceDataTitle">1ページ</dt>
-                  <dd class="svSection__priceData">10,000円</dd>
+                  <dt class="svSection__priceDataTitle">1枚</dt>
+                  <dd class="svSection__priceData">5,000円</dd>
                 </dl>
                 <dl class="svSection__priceDefList">
-                  <dt class="svSection__priceDataTitle">1ページ</dt>
-                  <dd class="svSection__priceData">10,000円</dd>
+                  <dt class="svSection__priceDataTitle">サイズ展開</dt>
+                  <dd class="svSection__priceData">2,000円 / 枚</dd>
                 </dl>
                 <dl class="svSection__priceDefList">
-                  <dt class="svSection__priceDataTitle">1ページ</dt>
-                  <dd class="svSection__priceData">10,000円</dd>
-                </dl>
-                <dl class="svSection__priceDefList">
-                  <dt class="svSection__priceDataTitle">1ページ</dt>
-                  <dd class="svSection__priceData">10,000円</dd>
+                  <dt class="svSection__priceDataTitle">【オプション】早仕上げ（２日以内）</dt>
+                  <dd class="svSection__priceData">＋3,000円</dd>
                 </dl>
               </div>
               <div class="svSection__commentWrap svSection__commentWrap--banner">

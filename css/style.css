@@ -182,9 +182,18 @@
   }
 }
 
+.c-worksCard__link > div {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+}
+
 .c-worksCard__image > img {
-  width: 100%;
-  height: auto;
+  width: auto;
+  max-width: 100%;
+  height: 250px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .c-worksCard__info {
@@ -217,6 +226,10 @@
   .c-worksCard__client {
     font-size: 1.2rem;
   }
+}
+
+.c-worksCard__client > span {
+  margin-left: 4px;
 }
 
 .c-worksCard__title {
@@ -474,7 +487,7 @@ a:hover {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100;
+  z-index: 99;
   -webkit-animation: slideIn 0.5s ease;
           animation: slideIn 0.5s ease;
 }
@@ -807,10 +820,49 @@ a:hover {
   opacity: 1;
 }
 
+.breadcrumbs {
+  padding: 8px 0 4px 16px;
+}
+
+.breadcrumbs a {
+  position: relative;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.breadcrumbs a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #A1C4FD;
+  -webkit-transform: scale(0, 1);
+          transform: scale(0, 1);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.breadcrumbs a:hover {
+  color: #A1C4FD;
+  opacity: 1;
+}
+
+.breadcrumbs a:hover::before {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
 .toTop__link {
   position: fixed;
-  bottom: 1em;
-  right: 1em;
+  bottom: 3em;
+  right: 4em;
   display: inline-block;
   width: 48px;
   height: 48px;
@@ -827,6 +879,12 @@ a:hover {
   transition: transform 0.5s ease, opacity 0.5s ease;
   transition: transform 0.5s ease, opacity 0.5s ease, -webkit-transform 0.5s ease;
   z-index: 10;
+}
+@media screen and (max-width: 720px) {
+  .toTop__link {
+    bottom: 1em;
+    right: 1em;
+  }
 }
 
 .toTop__link.fix {
@@ -985,7 +1043,7 @@ a:hover {
           transform: translateX(-50%);
   display: inline-block;
   background-color: #fff;
-  border-radius: 16px;
+  border-radius: 8px;
   -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
   z-index: 1;
@@ -1054,7 +1112,7 @@ a:hover {
   height: -moz-fit-content;
   height: fit-content;
   background-color: #A1C4FD;
-  z-index: 100;
+  z-index: 49;
   -webkit-animation: fadeIn 1.5s ease;
           animation: fadeIn 1.5s ease;
 }
@@ -1189,18 +1247,18 @@ a:hover {
   }
 }
 .top-works .splide__pagination {
-  bottom: -1.5em;
+  bottom: -16px;
 }
 .top-works .splide__pagination__page {
   background-color: #d9d9d9;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   margin: 0 8px;
 }
 .top-works .splide__pagination__page.is-active {
   background-color: #A1C4FD;
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+  -webkit-transform: scale(1.4);
+          transform: scale(1.4);
 }
 .top-works .splide__arrow {
   opacity: 1;
@@ -1228,6 +1286,9 @@ a:hover {
 }
 .top-works .button:disabled::before {
   background-color: #ccc;
+}
+.top-works .top-works__btnWrap {
+  margin-top: 84px;
 }
 
 .top-service {
@@ -1909,8 +1970,8 @@ a:hover {
 }
 
 .worksImage img {
-  width: 100%;
-  height: auto;
+  width: auto;
+  max-height: 600px;
 }
 
 .worksInfo {
@@ -2066,8 +2127,8 @@ a:hover {
 
 .articlePager__link--prev:hover {
   opacity: 1;
-  -webkit-transform: translateX(-4px);
-          transform: translateX(-4px);
+  -webkit-transform: translateX(-8px);
+          transform: translateX(-8px);
 }
 
 .articlePager__link--next {
@@ -2077,8 +2138,8 @@ a:hover {
 
 .articlePager__link--next:hover {
   opacity: 1;
-  -webkit-transform: translateX(4px);
-          transform: translateX(4px);
+  -webkit-transform: translateX(8px);
+          transform: translateX(8px);
 }
 
 .articlePager__link::before {

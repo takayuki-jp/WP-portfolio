@@ -21,8 +21,8 @@
   margin: 0 auto;
 }
 .worksImage img {
-  width: 100%;
-  height: auto;
+  width: auto;
+  max-height: 600px;
 }
 
 .worksInfo {
@@ -127,7 +127,7 @@
 }
 .articlePager__link--prev:hover {
   opacity: 1;
-  transform: translateX(-4px);
+  transform: translateX(-8px);
 }
 .articlePager__link--next {
   margin-right: 1em;
@@ -135,7 +135,7 @@
 }
 .articlePager__link--next:hover {
   opacity: 1;
-  transform: translateX(4px);
+  transform: translateX(8px);
 }
 .articlePager__link::before {
   position: absolute;
