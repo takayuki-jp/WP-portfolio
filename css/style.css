@@ -2325,6 +2325,7 @@ a:hover {
 @media screen and (max-width: 720px) {
   .svSection__title {
     font-size: 2.4rem;
+    letter-spacing: 0.05em;
   }
 }
 
@@ -2472,9 +2473,16 @@ a:hover {
 }
 
 .svSection__price {
-  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 60%;
   min-height: 360px;
-  padding: 24px 40px;
+  padding: 24px;
   background-color: #f5f5f5;
 }
 @media screen and (max-width: 720px) {
@@ -2484,7 +2492,8 @@ a:hover {
     min-height: -webkit-fit-content;
     min-height: -moz-fit-content;
     min-height: fit-content;
-    padding: 16px 24px;
+    padding: 16px 12px;
+    min-height: 240px;
   }
 }
 @media (max-width: 560px) {
@@ -2503,6 +2512,24 @@ a:hover {
     margin-left: 0;
     margin-right: auto;
   }
+}
+
+.svSection__priceContentWrap {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 16px;
+  height: 100%;
 }
 
 .svSection__priceTitle {
@@ -2526,6 +2553,59 @@ a:hover {
 @media screen and (max-width: 720px) {
   .svSection__priceDefList {
     font-size: 1.2rem;
+  }
+}
+
+.svSection__priceDataTitle {
+  width: 60%;
+  text-align: left;
+}
+
+.svSection__priceDataTitle > span {
+  margin-left: 8px;
+  font-size: 1.2rem;
+}
+@media screen and (max-width: 720px) {
+  .svSection__priceDataTitle > span {
+    font-size: 1rem;
+  }
+}
+
+.svSection__priceDataDesc {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+@media screen and (max-width: 720px) {
+  .svSection__priceDataDesc {
+    font-size: 1.4rem;
+  }
+}
+
+.svSection__priceDataDesc > span {
+  font-size: 1.2rem;
+}
+@media screen and (max-width: 720px) {
+  .svSection__priceDataDesc > span {
+    font-size: 1rem;
+  }
+}
+
+.svSection__priceNoteList {
+  margin-top: auto;
+  padding: 8px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.svSection__priceNoteItem {
+  margin-top: 4px;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+@media screen and (max-width: 720px) {
+  .svSection__priceNoteItem {
+    font-size: 1rem;
   }
 }
 
@@ -2554,6 +2634,7 @@ a:hover {
 
 .svSection__commentWrap--lp {
   background-color: #FFF2F2;
+  min-height: 180px;
 }
 
 .svSection__commentWrap--banner {
