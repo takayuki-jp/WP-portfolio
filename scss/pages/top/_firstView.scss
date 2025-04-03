@@ -48,7 +48,8 @@
   @include CenterX;
   display: inline-block;
   background-color: #fff;
-  border-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
   @include boxShadow;
   z-index: 1;
   @include sp {
@@ -88,7 +89,7 @@
 
 .mainVisual.fix .mainVisual__pageLink {
   position: fixed;
-  top: 60px;
+  top: 70px;
   @include CenterX;
   height: fit-content;
   background-color: $mainColor;

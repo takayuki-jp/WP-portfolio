@@ -53,8 +53,10 @@
     transition: all .3s ease;
   }
   .splide__arrow > i {
-    color: $mainColor;
     font-size: 32px;
+    color: $mainColor;
+    background-color: #fff;
+    border-radius: 50%;
   }
   .splide__arrow--prev {
     left: 0;
