@@ -17,12 +17,39 @@
             <p class="archiveList__subTitle c-sectionSubTitle">制作作品の一覧</p>
           </div>
 
+          <div class="archiveList__filterWrap">
+            <ul class="archiveList__filterList">
+              <li class="archiveList__filterListItem">
+                <button class="archiveList__filterBtn archiveList__filterBtn--all" data-filter="all">すべて</button>
+              </li>
+              <?php
+              $categories = get_categories(array(
+                'oderby' => 'name',
+                'order' => 'DESC',
+              ));
+
+              foreach($categories as $category) :
+              ?>
+              <li class="archiveList__filterListItem">
+                <button class="archiveList__filterBtn c-categoryTag c-categoryTag--<?php echo esc_attr($category->slug); ?>" data-filter="<?php echo esc_attr($category->slug); ?>">
+                  <?php echo esc_html($category->name); ?>
+                </button>
+              </li>
+              <?php endforeach; ?>
+            </ul>
+          </div>
+
           <div class="archiveList__itemListWrap">
             <ul class="archiveList__itemList c-worksCardList">
 
               <?php if (have_posts()) : ?>
                 <?php while (have_posts()) : the_post(); ?>
-                  <li class="archiveList__cardItem c-worksCard">
+                  <?php
+                    //投稿のカテゴリー情報を取得
+                    $categories = get_the_category();
+                    $category_slug = !empty($categories) ? esc_attr($categories[0]->slug) : '';
+                  ?>
+                  <li class="archiveList__cardItem c-worksCard" data-category="<?php echo esc_attr($category_slug); ?>">
                     <a class="c-worksCard__link" href="<?php the_permalink(); ?>">
 
                       <div class="c-worksCard__image">

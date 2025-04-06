@@ -207,6 +207,7 @@
   padding: 8px;
   font-weight: bold;
   color: #fff;
+  border-radius: 4px;
   @include sp {
     font-size: 1.2rem;
   }
@@ -219,8 +220,6 @@
 }
 .c-categoryTag--banner {
   background-color: $accentColor-yellow;
-}
-.c-categoryTag--banner span {
   color: $black;
 }
 
