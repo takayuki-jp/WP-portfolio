@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   const splide = new Splide(".splide", {
     type: "loop",
-    autoplay: true,
+    autoplay: false,
     interval: 3000,
     speed: 400,
     perPage: 3,

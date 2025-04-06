@@ -25,6 +25,7 @@
   </div>
 </footer>
 
+<div class="stalker" id="js-stalker"></div>
 <?php wp_footer(); ?>
 </body>
 </html>

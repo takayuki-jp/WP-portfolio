@@ -386,6 +386,41 @@ html {
   font-size: 62.5%;
 }
 
+/* stalker */
+/* マウスストーカーのスタイル */
+.stalker {
+  position: fixed;
+  top: -15px; /* widthの半分 */
+  left: -15px; /* widthの半分 */
+  width: 30px;
+  height: 30px;
+  background-color: rgba(247, 184, 184, 0.5);
+  border-radius: 41% 59% 43% 57%/52% 30% 70% 48%;
+  opacity: 0; /* カーソルを画面内に入れるまでは透明 */
+  pointer-events: none;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out; /* 遅れてついてくる時間 */
+  z-index: 999; /* 一番上に来るように */
+}
+
+/* テキスト選択時のスタイル */
+::-moz-selection {
+  background-color: rgba(249, 248, 113, 0.5); /* 選択時の背景色 */
+  color: #000; /* 選択時の文字色 */
+}
+::selection {
+  background-color: rgba(249, 248, 113, 0.5); /* 選択時の背景色 */
+  color: #000; /* 選択時の文字色 */
+}
+
+/* Firefox用の選択スタイル */
+::-moz-selection {
+  background-color: rgba(28, 180, 211, 0.3); /* 選択時の背景色 */
+  color: #000; /* 選択時の文字色 */
+}
+
 body {
   display: -webkit-box;
   display: -ms-flexbox;
