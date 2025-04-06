@@ -129,6 +129,12 @@
     gap: 16px;
   }
 }
+.c-worksCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;;
+  height: 100%;
+}
 .c-worksCard__link {
   max-width: 360px;
   padding: 24px 16px;
@@ -154,9 +160,11 @@
   flex: 1 0 auto;
 }
 .c-worksCard__image {
+  flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  max-height: 250px;
   aspect-ratio: 4 / 3;
 }
 .c-worksCard__image > img {
@@ -174,6 +182,7 @@
   flex-grow: 1;
 }
 .c-worksCard__titleWrap {
+  flex-grow: 1;
   text-align: center;
 }
 .c-worksCard__client {
