@@ -8,6 +8,7 @@
     {
         bcn_display();
     } ?>
+    </div>
 
       <section class="archiveList">
         <div class="archiveList__inner c-sectionPadding">
@@ -39,13 +40,13 @@
                           <?php endif; ?>
                           <p class="c-worksCard__title"><?php the_title(); ?></p>
                         </div>
-                        <div class="c-categoryTag c-categoryTag--<?php echo esc_attr(get_post_type()); ?>">
-                          <?php
+                        <div class="c-worksCard__category c-categoryTag c-categoryTag--<?php
                           $categories = get_the_category();
-                          if (!empty($categories)) {
-                            echo esc_html($categories[0]->name);
-                          }
-                          ?>
+                          $category_slug = !empty($categories) ? esc_attr($categories[0]->slug) : '';
+                          $category_name = !empty($categories) ? esc_html($categories[0]->name) : '';
+                          echo $category_slug;
+                          ?>">
+                          <span><?php echo $category_name; ?></span>
                         </div>
                       </div>
                     </a>

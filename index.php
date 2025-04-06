@@ -59,8 +59,8 @@ if (is_front_page()) {
 
             <?php
               $args = array(
-                'posts_per_page' => 4,
-                'orderby' => 'date',
+                'posts_per_page' => 5,
+                'orderby' => 'rand',
                 'order' => 'DESC'
               );
               $posts = get_posts($args);

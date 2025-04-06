@@ -139,17 +139,30 @@
   flex-direction: column;
   gap: 24px;
   height: 100%;
+  transition: transform .5s ease, box-shadow .5s ease, opacity .5s ease;
   @include sp {
     gap: 8px;
   }
 }
+
+.c-worksCard__link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .25);
+  opacity: 1;
+}
 .c-worksCard__link > div {
   flex: 1 0 auto;
+}
+.c-worksCard__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 4 / 3;
 }
 .c-worksCard__image > img {
   width: auto;
   max-width: 100%;
-  height: 250px;
+  height: auto;
   object-fit: contain;
 }
 .c-worksCard__info {
@@ -167,7 +180,7 @@
   font-size: 1.6rem;
   line-height: 1.6;
   @include sp {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 3vw, 1.2rem);
   }
 }
 .c-worksCard__client > span {
@@ -201,7 +214,7 @@
 .c-categoryTag--website {
   background-color: $mainColor;
 }
-.c-categoryTag--LP {
+.c-categoryTag--lp {
   background-color: $accentColor-pink;
 }
 .c-categoryTag--banner {
