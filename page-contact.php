@@ -15,7 +15,7 @@
       </p>
     </div>
 
-    <?php echo do_shortcode('    [contact-form-7 id="a7874ff" title="コンタクトフォーム 1"]'); ?>
+    <?php echo do_shortcode('[contact-form-7 id="a7874ff" title="コンタクトフォーム 1"]'); ?>
 
   </div>
 </main>

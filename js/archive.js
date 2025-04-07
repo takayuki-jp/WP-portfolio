@@ -5,25 +5,29 @@ document.addEventListener("DOMContentLoaded", function() {
   const filterButtons = document.querySelectorAll(".archiveList__filterBtn");
   const cards = document.querySelectorAll(".archiveList__cardItem");
 
-  filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const filter = button.getAttribute('data-filter');
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const filter = button.getAttribute("data-filter");
 
       // ボタンのアクティブ状態を切り替え
-      filterButtons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('active');
+      filterButtons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
 
-      //カードをフィルタリング
-      cards.forEach(card => {
-        const category = card.getAttribute('data-category');
-
-        if(filter === 'all' || category === filter) {
-          card.classList.remove('hidden');
-          card.style.display = ''; //再表示時にdisplayをリセット
-        } else {
-          card.classList.add('hidden');
-        }
+      // 一旦すべてのカードを非表示にする
+      cards.forEach((card) => {
+        card.style.display = "none";
       });
+
+      // 少し遅れて対象のカードを表示
+      setTimeout(() => {
+        cards.forEach((card) => {
+          const category = card.getAttribute("data-category");
+
+          if (filter === "all" || category === filter) {
+            card.style.display = "block"; // 対象のカードを表示
+          }
+        });
+      }, 100); // 100msの遅延を設定
     });
   });
 

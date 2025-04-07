@@ -1682,6 +1682,10 @@ a:hover {
   z-index: 0;
 }
 
+.archiveList__inner {
+  min-height: 100vh;
+}
+
 .archiveList__filterList {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1760,24 +1764,6 @@ a:hover {
   color: #e8ac2c;
 }
 
-.archiveList__filterBtn.c-categoryTag--website.active {
-  background-color: transparent;
-  border: 2px solid #A1C4FD;
-  color: #333;
-}
-
-.archiveList__filterBtn.c-categoryTag--lp.active {
-  background-color: transparent;
-  border: 2px solid #F7B8B8;
-  color: #333;
-}
-
-.archiveList__filterBtn.c-categoryTag--banner.active {
-  background-color: transparent;
-  border: 2px solid #F9F871;
-  color: #333;
-}
-
 .archiveList__itemList {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1793,25 +1779,37 @@ a:hover {
 }
 
 .archiveList__cardItem {
+  display: block;
   opacity: 1;
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transition: opacity 0.5s ease, margin 0.5s ease, -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, margin 0.5s ease, -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease, margin 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease, margin 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-transition-property: display, opacity, -webkit-transform;
+  transition-property: display, opacity, -webkit-transform;
+  transition-property: display, opacity, transform;
+  transition-property: display, opacity, transform, -webkit-transform;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+}
+@starting-style {
+  .archiveList__cardItem {
+    opacity: 0;
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+  }
 }
 
 .archiveList__cardItem.hidden {
+  display: none;
   opacity: 0;
   -webkit-transform: scale(0.8);
           transform: scale(0.8);
   pointer-events: none;
-  margin: 0;
-  -webkit-transition: opacity 0.5s ease, margin 0.5s ease, -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, margin 0.5s ease, -webkit-transform 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease, margin 0.5s ease;
-  transition: opacity 0.5s ease, transform 0.5s ease, margin 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-transition-property: display, opacity, -webkit-transform;
+  transition-property: display, opacity, -webkit-transform;
+  transition-property: display, opacity, transform;
+  transition-property: display, opacity, transform, -webkit-transform;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
 }
 
 .nav-links {
