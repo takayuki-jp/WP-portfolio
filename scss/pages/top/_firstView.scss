@@ -69,7 +69,7 @@
 .pageLink__link {
   position: relative;
   @include sp{
-    font-size: 14px;
+    font-size: 1.4rem;
   }
 }
 .pageLink__link::after {
