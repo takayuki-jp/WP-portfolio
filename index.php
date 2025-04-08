@@ -202,6 +202,16 @@ if (is_front_page()) {
           <p class="top-about__comment">
             副業のWEBデザインで、メルカリの画像制作、専門学校のバナー制作、最近ではLP制作やWEBサイト制作へ活動の幅を増やせるよう積極的に活動をしております。
           </p>
+          <div class="c-sns__snsWrap top-about__sns">
+            <ul class="c-sns__snsList">
+              <li class="c-sns__snsItem">
+                <a class="c-sns__snsLink" href="https://x.com/TakayukiTech" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+              </li>
+              <li class="c-sns__snsItem">
+                <a class="c-sns__snsLink" href="https://github.com/takayuki-jp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -229,7 +239,6 @@ if (is_front_page()) {
           <img src="<?php echo esc_url(get_theme_file_uri('img/top-contact__macbook.png')) ?>" alt="macbookのはめ込み画像">
         </div>
       </div>
-
       <div class="top-service__btnWrap c-btnWrap">
         <a class="top-service__btnLink c-btn" href="<?php echo esc_url(home_url('/contact/'))  ?>">contact</a>
       </div>

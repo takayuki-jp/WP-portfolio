@@ -369,6 +369,31 @@
   }
 }
 
+.c-sns__snsList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 8px;
+}
+
+.c-sns__snsLink > i {
+  font-size: 2.4rem;
+  color: #fff;
+}
+
+.c-sns__copyright {
+  font-family: "Open Sans";
+  text-align: center;
+}
+@media screen and (max-width: 720px) {
+  .c-sns__copyright {
+    font-size: 1.2rem;
+  }
+}
+
 /* reset
 ============================= */
 h1, h2, h3, h4, h5, h6, p, dl, dd, ul, li {
@@ -1029,31 +1054,6 @@ a:hover {
   }
 }
 
-.footer__snsList {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  gap: 8px;
-}
-
-.footer__snsLink > i {
-  font-size: 2.4rem;
-  color: #fff;
-}
-
-.footer__copyright {
-  font-family: "Open Sans";
-  text-align: center;
-}
-@media screen and (max-width: 720px) {
-  .footer__copyright {
-    font-size: 1.2rem;
-  }
-}
-
 .mainVisual {
   position: relative;
   background: linear-gradient(45deg, #fff, #f5f5f5);
@@ -1575,6 +1575,7 @@ a:hover {
 }
 
 .top-about__commentWrap {
+  position: relative;
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
@@ -1600,6 +1601,17 @@ a:hover {
 .top-about__comment.animeTrigger {
   -webkit-animation-delay: 2s;
           animation-delay: 2s;
+}
+
+.top-about__sns {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+.top-about__sns .c-sns__snsLink > i {
+  font-size: 2.4rem;
+  color: #333;
 }
 
 .top-contact {

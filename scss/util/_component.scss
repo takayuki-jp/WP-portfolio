@@ -278,3 +278,22 @@
 
   }
 }
+
+//sns
+.c-sns__snsList {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+.c-sns__snsLink > i {
+  font-size: 2.4rem;
+  color: #fff;
+}
+
+.c-sns__copyright {
+  font-family: "Open Sans";
+  text-align: center;
+  @include sp {
+    font-size: 1.2rem;
+  }
+}

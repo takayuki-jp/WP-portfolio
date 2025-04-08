@@ -73,21 +73,3 @@
     width: 130px;
   }
 }
-.footer__snsList {
-  display: flex;
-  justify-content: flex-end;
-  gap: 8px;
-}
-.footer__snsLink > i {
-  font-size: 2.4rem;
-  color: #fff;
-}
-
-
-.footer__copyright {
-  font-family: "Open Sans";
-  text-align: center;
-  @include sp {
-    font-size: 1.2rem;
-  }
-}

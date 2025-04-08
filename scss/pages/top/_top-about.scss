@@ -31,6 +31,7 @@
 }
 
 .top-about__commentWrap {
+  position: relative;
   flex: 1;
   padding: 24px;
   background-color: #fff;
@@ -49,4 +50,14 @@
 }
 .top-about__comment.animeTrigger {
   animation-delay: 2s;
+}
+
+.top-about__sns {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+.top-about__sns .c-sns__snsLink > i {
+  font-size: 2.4rem;
+  color: $black;
 }
