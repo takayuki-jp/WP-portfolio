@@ -8,10 +8,13 @@
         <div class="footer__logo">
           <img src="<?php echo esc_url(get_theme_file_uri('img/logo.png')) ?>" alt="たかゆきポートフォリオのロゴ">
         </div>
-        <div class="footer__snsWrap">
-          <ul class="footer__snsList">
-            <li class="footer__snsItem">
-              <a class="footer__snsLink" href="https://x.com/TakayukiTech"><i class="fa-brands fa-x-twitter"></i></a>
+        <div class="c-sns__snsWrap footer__sns">
+          <ul class="c-sns__snsList">
+            <li class="c-sns__snsItem">
+              <a class="c-sns__snsLink" href="https://x.com/TakayukiTech" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+            </li>
+            <li class="c-sns__snsItem">
+              <a class="c-sns__snsLink" href="https://github.com/takayuki-jp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
             </li>
           </ul>
         </div>
@@ -25,6 +28,7 @@
   </div>
 </footer>
 
+<div class="stalker" id="js-stalker"></div>
 <?php wp_footer(); ?>
 </body>
 </html>

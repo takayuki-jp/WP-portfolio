@@ -34,6 +34,11 @@ function my_enqueue_scripts() {
   if (is_page('service')) {
     wp_enqueue_script('service', get_template_directory_uri() . '/js/service.js', array(), null, true);
   }
+
+  //archiveページのみのjSファイル読み込み（archive）
+  if (is_archive()) {
+    wp_enqueue_script('archive', get_template_directory_uri() . '/js/archive.js', array(), null, true);
+  }
 }
 add_action('wp_enqueue_scripts', 'my_enqueue_scripts');
 

@@ -4,6 +4,20 @@ window.addEventListener('DOMContentLoaded', function() {
 //----------ページ読み込み時にフェードイン----------
   this.document.body.classList.add('loaded');
 
+//----------マウスポインタのストーカー----------
+const stalker = document.getElementById("js-stalker");
+document.addEventListener("mousemove", function (e) {
+  // マウスの座標を取得
+  const x = e.clientX;
+  const y = e.clientY;
+  // ストーカーの位置を更新
+  stalker.style.opacity = "1"; // カーソルが画面内に入ったら不透明にする
+  stalker.style.transform = "translate(" + x + "px, " + y + "px)"; // マウスの座標に移動
+});
+
+
+
+
 
 //----------sp-menuの開閉----------
   document.querySelector('.header__sp-menuBtn').addEventListener('click', function() {
@@ -60,8 +74,6 @@ toTopButton.addEventListener('click', function(e) {
     }
   });
 });
-
-
 
 
 }); // 'DOMContentLoaded' 終了

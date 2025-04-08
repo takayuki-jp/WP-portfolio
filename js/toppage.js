@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function() {
     focus: "center",
     trimSpace: true,
     pagination: true,
-    clones: 4,
+    clones: 5,
     cloneStatus: false,
     breakpoints: {
       800: {

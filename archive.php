@@ -1,6 +1,15 @@
 <?php get_header(); ?>
 
     <main class="page-archive">
+
+    <!-- パンくずリスト -->
+    <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+    <?php if (function_exists('bcn_display'))
+    {
+        bcn_display();
+    } ?>
+    </div>
+
       <section class="archiveList">
         <div class="archiveList__inner c-sectionPadding">
           <div class="c-sectionTitleWrap">
@@ -8,12 +17,39 @@
             <p class="archiveList__subTitle c-sectionSubTitle">制作作品の一覧</p>
           </div>
 
+          <div class="archiveList__filterWrap">
+            <ul class="archiveList__filterList">
+              <li class="archiveList__filterListItem">
+                <button class="archiveList__filterBtn archiveList__filterBtn--all" data-filter="all">すべて</button>
+              </li>
+              <?php
+              $categories = get_categories(array(
+                'oderby' => 'name',
+                'order' => 'DESC',
+              ));
+
+              foreach($categories as $category) :
+              ?>
+              <li class="archiveList__filterListItem">
+                <button class="archiveList__filterBtn c-categoryTag c-categoryTag--<?php echo esc_attr($category->slug); ?>" data-filter="<?php echo esc_attr($category->slug); ?>">
+                  <?php echo esc_html($category->name); ?>
+                </button>
+              </li>
+              <?php endforeach; ?>
+            </ul>
+          </div>
+
           <div class="archiveList__itemListWrap">
             <ul class="archiveList__itemList c-worksCardList">
 
               <?php if (have_posts()) : ?>
                 <?php while (have_posts()) : the_post(); ?>
-                  <li class="archiveList__cardItem c-worksCard">
+                  <?php
+                    //投稿のカテゴリー情報を取得
+                    $categories = get_the_category();
+                    $category_slug = !empty($categories) ? esc_attr($categories[0]->slug) : '';
+                  ?>
+                  <li class="archiveList__cardItem c-worksCard" data-category="<?php echo esc_attr($category_slug); ?>">
                     <a class="c-worksCard__link" href="<?php the_permalink(); ?>">
 
                       <div class="c-worksCard__image">
@@ -31,13 +67,13 @@
                           <?php endif; ?>
                           <p class="c-worksCard__title"><?php the_title(); ?></p>
                         </div>
-                        <div class="c-categoryTag c-categoryTag--<?php echo esc_attr(get_post_type()); ?>">
-                          <?php
+                        <div class="c-worksCard__category c-categoryTag c-categoryTag--<?php
                           $categories = get_the_category();
-                          if (!empty($categories)) {
-                            echo esc_html($categories[0]->name);
-                          }
-                          ?>
+                          $category_slug = !empty($categories) ? esc_attr($categories[0]->slug) : '';
+                          $category_name = !empty($categories) ? esc_html($categories[0]->name) : '';
+                          echo $category_slug;
+                          ?>">
+                          <span><?php echo $category_name; ?></span>
                         </div>
                       </div>
                     </a>

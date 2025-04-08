@@ -7,20 +7,106 @@
   z-index: 0;
 }
 
-.archiveList__itemList {
+.archiveList__inner {
+  min-height: 100vh;
+}
+
+.archiveList__filterList {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 54px;
+  @include sp {
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+}
+
+.archiveList__filterBtn {
+  transition: background-color 0.5s ease;
+}
+.archiveList__filterBtn--all {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 8px;
+  font-weight: bold;
+  color: #fff;
+  background-color: $black;
+  border: 2px solid $black;
+  border-radius: 4px;
+}
+.archiveList__filterBtn.c-categoryTag--website {
+  border: 2px solid $mainColor;
+}
+.archiveList__filterBtn.c-categoryTag--lp {
+  border: 2px solid $accentColor-pink;
+}
+.archiveList__filterBtn.c-categoryTag--banner {
+  border: 2px solid $accentColor-yellow;
+}
+
+.archiveList__filterBtn--all:hover,
+.archiveList__filterBtn--all.active {
+  background-color: transparent;
+  border: 2px solid $black;
+  color: $black;
+
+}
+.archiveList__filterBtn.c-categoryTag--website:hover,
+.archiveList__filterBtn.c-categoryTag--website.active {
+  background-color: transparent;
+  border: 2px solid $mainColor;
+  color: $mainColor;
+}
+.archiveList__filterBtn.c-categoryTag--lp:hover,
+.archiveList__filterBtn.c-categoryTag--lp.active {
+  background-color: transparent;
+  border: 2px solid $accentColor-pink;
+  color: $accentColor-pink;
+}
+.archiveList__filterBtn.c-categoryTag--banner:hover,
+.archiveList__filterBtn.c-categoryTag--banner.active {
+  background-color: transparent;
+  border: 2px solid $accentColor-yellow;
+  color: #e8ac2c;
+}
+
+.archiveList__itemList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  transition: all 0.5s ease;
+  @media screen and (max-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
 }
 
 .archiveList__cardItem {
-  width: 30%;
-  @include sp {
-    width: 46%;
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+
+  transition-property: display, opacity, transform;
+  transition-duration: 1s;
+
+  @starting-style {
+    opacity: 0;
+    transform: scale(0.8);
   }
 }
 
 
+.archiveList__cardItem.hidden {
+  display: none;
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+  transition-property: display, opacity, transform;
+  transition-duration: 1s;
+}
 
 //ページネーション
 .nav-links {

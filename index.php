@@ -59,8 +59,8 @@ if (is_front_page()) {
 
             <?php
               $args = array(
-                'posts_per_page' => 4,
-                'orderby' => 'date',
+                'posts_per_page' => 5,
+                'orderby' => 'rand',
                 'order' => 'DESC'
               );
               $posts = get_posts($args);
@@ -79,7 +79,7 @@ if (is_front_page()) {
                   </div>
                   <div class="c-worksCard__titleWrap">
                     <?php if (get_field('client')) : ?>
-                      <p class="c-worksCard__client"><?php the_field('client'); ?></p>
+                      <p class="c-worksCard__client"><?php the_field('client'); ?><span>様</span></p>
                     <?php endif; ?>
                     <p class="c-worksCard__title"><?php the_title(); ?></p>
                   </div>
@@ -188,20 +188,30 @@ if (is_front_page()) {
         <div class="top-about__commentWrap animeTarget slideInRtoL">
           <p class="top-about__comment">
             はじめまして。ポートフォリオサイトへお越しいただきありがとうございます。<br>
-            WEBデザイナーのたかゆきと申します。<br>
+            WEBデザイナーのたかゆきと申します。京都、札幌と転勤を経て、現在は東京に在住しています。<br><br>
             こちらのWEBサイトでは過去の実績を紹介しております。<br>
             案件依頼の参考になれば幸いです。<br>
           </p>
           <p class="top-about__comment">
-            「時間や場所に囚われない、自分らしい働き方」を目指して、大好きなパソコンを使って夢の実現に向け、日々勉強に励んでおります。<br>
+            「大好きなパソコンを使って、時間や場所に囚われない、自分らしい働き方」という夢の実現を目指して、日々楽しく勉強に励んでおります。<br>
           </p>
           <p class="top-about__comment">
-            これまでは接客業を中心に活動。
-            現在は東京在住、ECサイト（makeshop）のデザイン、コード保守を担当。
+            これまではホテルを初めととする接客業を中心に活動。<br>
+            本業では、自社展開のECサイト（カートシステム：makeshop）のデザインリニューアル、企画イベントのバナーの作成や、新規サービスの説明ページ作成（デザイン及びコーディング）、サイト全体のコード保守を中心に担当しています。
           </p>
           <p class="top-about__comment">
-            メルカリの画像制作や、専門学校のバナー制作、最近ではLP制作やWEBサイト制作へ活動の幅を増やせるよう積極的に活動をしております。
+            副業のWEBデザインで、メルカリの画像制作、専門学校のバナー制作、最近ではLP制作やWEBサイト制作へ活動の幅を増やせるよう積極的に活動をしております。
           </p>
+          <div class="c-sns__snsWrap top-about__sns">
+            <ul class="c-sns__snsList">
+              <li class="c-sns__snsItem">
+                <a class="c-sns__snsLink" href="https://x.com/TakayukiTech" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
+              </li>
+              <li class="c-sns__snsItem">
+                <a class="c-sns__snsLink" href="https://github.com/takayuki-jp" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -229,7 +239,6 @@ if (is_front_page()) {
           <img src="<?php echo esc_url(get_theme_file_uri('img/top-contact__macbook.png')) ?>" alt="macbookのはめ込み画像">
         </div>
       </div>
-
       <div class="top-service__btnWrap c-btnWrap">
         <a class="top-service__btnLink c-btn" href="<?php echo esc_url(home_url('/contact/'))  ?>">contact</a>
       </div>

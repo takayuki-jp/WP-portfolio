@@ -32,19 +32,19 @@
 
 
   .splide__pagination  {
-    bottom: -1.5em;
+    bottom: -16px;;
   }
 
   .splide__pagination__page {
     background-color: $gray;
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     margin: 0 8px;
   }
 
   .splide__pagination__page.is-active {
     background-color: $mainColor;
-    transform: scale(1.2);
+    transform: scale(1.4);
   }
 
   .splide__arrow {
@@ -53,8 +53,10 @@
     transition: all .3s ease;
   }
   .splide__arrow > i {
+    font-size: 3.2rem;
     color: $mainColor;
-    font-size: 32px;
+    background-color: #fff;
+    border-radius: 50%;
   }
   .splide__arrow--prev {
     left: 0;
@@ -70,6 +72,9 @@
   }
   .button:disabled::before {
     background-color: #ccc;
+  }
+  .top-works__btnWrap {
+    margin-top: 84px;
   }
 }
 
