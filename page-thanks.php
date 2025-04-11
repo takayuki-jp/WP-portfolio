@@ -1,6 +1,15 @@
 <?php get_header(); ?>
 
 <main class="page-thanks">
+
+  <!-- パンくずリスト -->
+  <div class="c-breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+  <?php if (function_exists('bcn_display'))
+  {
+      bcn_display();
+  } ?>
+  </div>
+
   <div class="thanks__inner c-sectionPadding">
     <h1 class="thanks__title">ご相談を承りました</h1>
 

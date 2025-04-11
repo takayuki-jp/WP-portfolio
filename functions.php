@@ -77,12 +77,28 @@ function post_has_archive($args, $post_type) {
 add_filter('register_post_type_args', 'post_has_archive', 10, 2);
 
 
-add_action('pre_get_posts', function($query) {
-    if ($query->is_main_query() && !is_admin() && $query->is_archive()) {
-        error_log('アーカイブページのクエリが実行されています');
-        error_log('投稿数: ' . $query->found_posts);
-    }
-});
+// /********** Breadcrumb NavXTによるアーカイブページのタイトル変更 ***********/
+// add_filter('bcn_breadcrumb_title', function($title, $type, $id) {
+//   if (is_post_type_archive()) {
+//     return '制作作品一覧';
+//   }
+//   return $title;
+// }, 10, 3);
+function my_static_breadcrumb_adder( $breadcrumb_trail ) {
+
+  if (is_post_type_archive('post')) { // デフォルトの投稿一覧ページの場合
+    $item = new bcn_breadcrumb('制作作品の一覧', null, array('post'));
+  } elseif (get_post_type() === 'post') { // デフォルトの投稿ページの場合
+    $item = new bcn_breadcrumb('制作作品の一覧', null, array('post'), home_url('archive/'), null, true);
+  }
+
+  $stuck = array_pop( $breadcrumb_trail->breadcrumbs ); // HOME 一時退避
+  $breadcrumb_trail->breadcrumbs[] = $item; // 任意の名前 追加
+  $breadcrumb_trail->breadcrumbs[] = $stuck; // HOME 戻す
+
+}
+add_action('bcn_after_fill', 'my_static_breadcrumb_adder');
+
 
 
 /********** サムネイルの有効化 ***********/

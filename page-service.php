@@ -1,6 +1,15 @@
 <?php get_header(); ?>
 
     <main class="page-service service">
+
+      <!-- パンくずリスト -->
+      <div class="c-breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+      <?php if (function_exists('bcn_display'))
+      {
+          bcn_display();
+      } ?>
+      </div>
+
       <div class="service__inner c-sectionPadding">
         <div class="c-sectionTitleWrap">
           <h1 class="service__title c-sectionTitle"><span>S</span>ervice</h1>
@@ -68,7 +77,7 @@
                     <li class="svSection__priceNoteItem">※商品やサービスの画像提供をお願いします。</li>
                     <li class="svSection__priceNoteItem">※こちらで用意する画像については基本的に著作権フリー素材を使用します。</li>
                     <li class="svSection__priceNoteItem">※料金は制作物のサイズによって上下します。詳しくはお問い合わせにてご相談ください。</li>
-                  <ul>
+                  </ul>
                 </div>
               </div>
               <div class="svSection__commentWrap svSection__commentWrap--website">
@@ -116,7 +125,7 @@
                     <li class="svSection__priceNoteItem">※商品やサービスの画像提供をお願いします。</li>
                     <li class="svSection__priceNoteItem">※こちらで用意する画像については基本的に著作権フリー素材を使用します。</li>
                     <li class="svSection__priceNoteItem">※料金は制作物のサイズによって上下します。詳しくはお問い合わせにてご相談ください。</li>
-                  <ul>
+                  </ul>
                 </div>
               </div>
 
@@ -170,7 +179,7 @@
                     <li class="svSection__priceNoteItem">※商品やサービスの画像提供をお願いします。</li>
                     <li class="svSection__priceNoteItem">※こちらで用意する画像については基本的に著作権フリー素材を使用します。</li>
                     <li class="svSection__priceNoteItem">※料金は制作物のサイズによって上下します。詳しくはお問い合わせにてご相談ください。</li>
-                  <ul>
+                  </ul>
                 </div>
               </div>
 

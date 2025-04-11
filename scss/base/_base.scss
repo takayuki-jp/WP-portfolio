@@ -1,26 +1,19 @@
-/* code-checkeで作成中。 */
-/* 新たな環境からのpushテスト */
-
 @charset "UTF-8";
 @use '../util/index' as *;
 
-/* はみ出し確認 */
+// はみ出し確認
 //  * {
 //   outline: 2px red solid;
 //   }
-
-
-.wrap {
-  overflow: hidden;
-}
-
 
 /* base
 ============================= */
 /* googleFonts */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap');
 
-/* 確認のための記述です */
+
+
+
 
 
 /* fontSize */

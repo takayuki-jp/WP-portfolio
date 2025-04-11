@@ -2,16 +2,50 @@
 @use './variables' as *;
 @use './mixin' as *;
 
-//適用チェック
-//c-sectionPadding
+
+
+// パンくずリスト
+.c-breadcrumbs {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 16px;
+}
+.c-breadcrumbs a {
+  position: relative;
+  transition: all .5s ease;
+}
+.c-breadcrumbs a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom:0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: $mainColor;
+  transform: scale(0, 1);
+  transform-origin: left;
+  transition: transform .3s ease;
+}
+.c-breadcrumbs a:hover {
+  color: $mainColor;
+  opacity: 1;
+}
+.c-breadcrumbs a:hover::before {
+  transform: scale(1, 1);
+}
+
+
 .c-sectionPadding {
   max-width: 1200px;
   margin: 0 auto;
   padding: 80px 16px;
+  overflow: hidden;
   @include sp {
     padding: 40px 16px;
   }
 }
+
 
 //c-sectionTitle
 .c-sectionTitleWrap {
@@ -226,6 +260,7 @@
 }
 .c-categoryTag--lp {
   background-color: $accentColor-pink;
+  text-transform: uppercase;
 }
 .c-categoryTag--banner {
   background-color: $accentColor-yellow;

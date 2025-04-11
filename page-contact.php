@@ -1,6 +1,15 @@
 <?php get_header(); ?>
 
 <main class="page-contact">
+
+  <!-- パンくずリスト -->
+  <div class="c-breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+  <?php if (function_exists('bcn_display'))
+  {
+      bcn_display();
+  } ?>
+  </div>
+
   <div class="contact__inner c-sectionPadding ">
     <div class="c-sectionTitleWrap">
       <h1 class="contact__title c-sectionTitle"><span>C</span>ontact</h1>

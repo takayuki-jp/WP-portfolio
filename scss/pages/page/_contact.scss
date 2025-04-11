@@ -166,6 +166,9 @@
 .wpcf7__btn:hover input {
   color: $mainColor;
 }
+.wpcf7__btn--submit {
+  cursor: pointer;
+}
 .wpcf7-spinner {
   position: absolute !important;
   right: 8px;
