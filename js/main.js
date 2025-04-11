@@ -15,10 +15,6 @@ document.addEventListener("mousemove", function (e) {
   stalker.style.transform = "translate(" + x + "px, " + y + "px)"; // マウスの座標に移動
 });
 
-
-
-
-
 //----------sp-menuの開閉----------
   document.querySelector('.header__sp-menuBtn').addEventListener('click', function() {
     document.querySelector('.header').classList.toggle('panelActive');

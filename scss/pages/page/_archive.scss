@@ -9,6 +9,7 @@
 
 .archiveList__inner {
   min-height: 100vh;
+  transform: translateZ(0);
 }
 
 .archiveList__filterList {
@@ -73,13 +74,19 @@
   color: #e8ac2c;
 }
 
+.archiveList__itemListWrap {
+  width: 100%;
+  max-width: 100vw;
+}
+
 .archiveList__itemList {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   transition: all 0.5s ease;
+  will-change: grid-template-columns, gap;
   @media screen and (max-width: 600px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 8px;
   }
 }

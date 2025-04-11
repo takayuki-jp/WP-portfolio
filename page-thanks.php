@@ -23,7 +23,7 @@
     </div>
 
     <div class="thanks__btnWrap">
-      <button class="thanks__button c-btn" type="submit">送信</button>
+      <a class="thanks__button c-btn" href="<?php echo esc_url(home_url()) ?>">HOME</a>
     </div>
   </div>
 </main>
