@@ -6,7 +6,7 @@
     <div class="footer__inner">
       <div class="footer__contentWrap">
         <div class="footer__logo">
-          <img src="<?php echo esc_url(get_theme_file_uri('img/logo.png')) ?>" alt="たかゆきポートフォリオのロゴ">
+          <img src="<?php echo esc_url(get_theme_file_uri('img/logo.webp')) ?>" alt="たかゆきポートフォリオのロゴ">
         </div>
         <div class="c-sns__snsWrap footer__sns">
           <ul class="c-sns__snsList">

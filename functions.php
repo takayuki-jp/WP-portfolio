@@ -77,12 +77,27 @@ function post_has_archive($args, $post_type) {
 add_filter('register_post_type_args', 'post_has_archive', 10, 2);
 
 
-add_action('pre_get_posts', function($query) {
-    if ($query->is_main_query() && !is_admin() && $query->is_archive()) {
-        error_log('アーカイブページのクエリが実行されています');
-        error_log('投稿数: ' . $query->found_posts);
-    }
-});
+// /********** Breadcrumb NavXTによるアーカイブページのタイトル変更 ***********/
+function my_static_breadcrumb_adder($breadcrumb_trail) {
+  // デフォルトの投稿一覧ページの場合
+  if (is_post_type_archive('post')) {
+    $item = new bcn_breadcrumb('制作作品の一覧', null, array('post'));
+  } 
+  // デフォルトの投稿ページの場合
+  elseif (get_post_type() === 'post') {
+    $item = new bcn_breadcrumb('制作作品の一覧', null, array('post'), home_url('archive/'), null, true);
+  }
+  // 該当しないページは処理をスキップ
+  else {
+    return;
+  }
+
+  $stuck = array_pop($breadcrumb_trail->breadcrumbs); // HOME 一時退避
+  $breadcrumb_trail->breadcrumbs[] = $item; // 任意の名前を追加
+  $breadcrumb_trail->breadcrumbs[] = $stuck; // HOME 戻す
+}
+add_action('bcn_after_fill', 'my_static_breadcrumb_adder');
+
 
 
 /********** サムネイルの有効化 ***********/
@@ -105,3 +120,87 @@ function add_lightbox_to_featured_image($html, $post_id, $post_thumbnail_id, $si
     }
     return $html;
 }
+
+
+/**
+ * Contact Form 7 をお問い合わせページだけで読み込むようにする
+ * これをしないと ReCAPTCHA も全ページで読み込まれてしまい
+ * 余計なリクエストが発生するため
+ */
+function cf7_enqueue_scripts_and_styles()
+{
+    // CF7を読み込ませる固定ページを定義する
+    $pages = ['contact','entry'];
+    if (is_page($pages)){
+        if ( function_exists( 'wpcf7_enqueue_scripts' ) ) {
+            wpcf7_enqueue_scripts();
+        }
+
+        if ( function_exists( 'wpcf7_enqueue_styles' ) ) {
+            wpcf7_enqueue_styles();
+        }
+    }
+    else {
+        wp_deregister_script('google-recaptcha');
+        wp_deregister_script('wpcf7-recaptcha');
+    }
+}
+add_filter('wpcf7_load_js', '__return_false');
+add_filter('wpcf7_load_css', '__return_false');
+add_action('wp_enqueue_scripts', 'cf7_enqueue_scripts_and_styles', 100, 0);
+
+
+
+/*********************
+OGPタグ/Twitterカード設定を出力
+*********************/
+function my_meta_ogp() {
+  if( is_front_page() || is_home() || is_singular() ){
+    global $post;
+    $ogp_title = '';
+    $ogp_descr = '';
+    $ogp_url = '';
+    $ogp_img = '';
+    $insert = '';
+
+    if( is_singular() ) { //記事＆固定ページ
+       setup_postdata($post);
+       $ogp_title = $post->post_title;
+       $ogp_descr = mb_substr(get_the_excerpt(), 0, 100);
+       $ogp_url = get_permalink();
+       wp_reset_postdata();
+    } elseif ( is_front_page() || is_home() ) { //トップページ
+       $ogp_title = get_bloginfo('name');
+       $ogp_descr = get_bloginfo('description');
+       $ogp_url = home_url();
+    }
+
+    //og:type
+    $ogp_type = ( is_front_page() || is_home() ) ? 'website' : 'article';
+
+    //og:image
+    if ( is_singular() && has_post_thumbnail() ) {
+       $ps_thumb = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full');
+       $ogp_img = $ps_thumb[0];
+    } else {
+     $ogp_img = 'http://takayuki-portfolio.com/wp-content/uploads/2025/04/mainVisual-pf.webp';
+    }
+
+    //出力するOGPタグをまとめる
+    $insert .= '<meta property="og:title" content="'.esc_attr($ogp_title).'" />' . "\n";
+    $insert .= '<meta property="og:description" content="'.esc_attr($ogp_descr).'" />' . "\n";
+    $insert .= '<meta property="og:type" content="'.$ogp_type.'" />' . "\n";
+    $insert .= '<meta property="og:url" content="'.esc_url($ogp_url).'" />' . "\n";
+    $insert .= '<meta property="og:image" content="'.esc_url($ogp_img).'" />' . "\n";
+    $insert .= '<meta property="og:site_name" content="'.esc_attr(get_bloginfo('name')).'" />' . "\n";
+    $insert .= '<meta name="twitter:card" content="summary_large_image" />' . "\n";
+    $insert .= '<meta name="twitter:site" content="TakayukiTech" />' . "\n";
+    $insert .= '<meta property="og:locale" content="ja_JP" />' . "\n";
+
+
+
+    echo $insert;
+  }
+} //END my_meta_ogp
+
+add_action('wp_head','my_meta_ogp');//headにOGPを出力

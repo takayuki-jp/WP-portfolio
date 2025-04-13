@@ -31,3 +31,11 @@
     margin-top: 64px;
   }
 }
+
+.thanks__button.c-btn::after {
+  margin-top: 0;
+}
+
+.wpcf7-form.sent .wpcf7-response-output {
+  display: none;
+}

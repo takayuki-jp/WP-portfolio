@@ -3,7 +3,7 @@
     <main class="page-archive">
 
     <!-- パンくずリスト -->
-    <div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
+    <div class="c-breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
     <?php if (function_exists('bcn_display'))
     {
         bcn_display();
@@ -67,12 +67,13 @@
                           <?php endif; ?>
                           <p class="c-worksCard__title"><?php the_title(); ?></p>
                         </div>
-                        <div class="c-worksCard__category c-categoryTag c-categoryTag--<?php
-                          $categories = get_the_category();
-                          $category_slug = !empty($categories) ? esc_attr($categories[0]->slug) : '';
-                          $category_name = !empty($categories) ? esc_html($categories[0]->name) : '';
-                          echo $category_slug;
-                          ?>">
+                        <!-- カテゴリ（入力されている場合のみ表示) -->
+                        <?php
+                        $categories = get_the_category();
+                        $category_slug = !empty($categories) ? esc_attr($categories[0]->slug) : '';
+                        $category_name = !empty($categories) ? esc_html($categories[0]->slug) : '';
+                        ?>
+                        <div class="worksHead__category c-categoryTag c-categoryTag--<?php echo $category_slug; ?>">
                           <span><?php echo $category_name; ?></span>
                         </div>
                       </div>
@@ -93,7 +94,7 @@
             );
             the_posts_pagination($args);
             ?>
-
+          </div>
         </div>
       </section>
     </main>

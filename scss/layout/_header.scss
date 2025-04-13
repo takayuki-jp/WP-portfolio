@@ -14,7 +14,6 @@
   }
 }
 
-
 .header.fix {
   position: fixed;
   top: 0;
@@ -33,8 +32,6 @@
     opacity: 1;
   }
 }
-
-
 
 .header__inner {
   display: flex;
@@ -248,7 +245,10 @@
   }
   
   .header.panelActive {
-  
+
+    .header__siteLogo {
+      z-index: 100;
+    }
     .header__sp-menuBar:nth-child(1) {
       width: 80%;
       transform: rotate(45deg) translateY(0);
@@ -262,33 +262,3 @@
       opacity: 1;
     }
   }
-
-
-// パンくずリスト
-.breadcrumbs {
-  padding: 8px 0 4px 16px;
-}
-.breadcrumbs a {
-  position: relative;
-  transition: all .5s ease;
-}
-.breadcrumbs a::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom:0;
-  display: block;
-  width: 100%;
-  height: 2px;
-  background-color: $mainColor;
-  transform: scale(0, 1);
-  transform-origin: left;
-  transition: transform .3s ease;
-}
-.breadcrumbs a:hover {
-  color: $mainColor;
-  opacity: 1;
-}
-.breadcrumbs a:hover::before {
-  transform: scale(1, 1);
-}

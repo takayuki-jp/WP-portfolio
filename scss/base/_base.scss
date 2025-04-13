@@ -1,34 +1,21 @@
-/* code-checkeで作成中。 */
-/* 新たな環境からのpushテスト */
-
 @charset "UTF-8";
 @use '../util/index' as *;
 
-/* はみ出し確認 */
+// はみ出し確認
 //  * {
 //   outline: 2px red solid;
 //   }
-
-
-.wrap {
-  overflow: hidden;
-}
-
 
 /* base
 ============================= */
 /* googleFonts */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap');
 
-/* 確認のための記述です */
-
-
 /* fontSize */
 html {
   font-size: 62.5%;
 }
 
-/* stalker */
 /* マウスストーカーのスタイル */
 .stalker {
   position: fixed;
@@ -41,8 +28,16 @@ html {
   opacity: 0; /* カーソルを画面内に入れるまでは透明 */
   pointer-events: none;
   transition: transform .3s ease-out; /* 遅れてついてくる時間 */
-  z-index: 999; /* 一番上に来るように */
+  z-index: 999;
 }
+
+/* タッチデバイスでは非表示にする */
+@media (hover: none) and (pointer: coarse) {
+  .stalker {
+    display: none !important;
+  }
+}
+
 
 /* テキスト選択時のスタイル */
 ::selection {

@@ -1,13 +1,3 @@
-<?php
-if (is_home()) {
-    echo '<script>console.log("is_home is true");</script>';
-}
-if (is_front_page()) {
-    echo '<script>console.log("is_front_page is true");</script>';
-}
-?>
-
-
 <?php get_header(); ?>
 
 <main>
@@ -39,9 +29,9 @@ if (is_front_page()) {
       </div>
     </div>
 
-    <img class="mainVisual__image mainVisual__image--PC" src="<?php echo esc_url(get_theme_file_uri('img/mv-pc.png')); ?>" alt="PC画像">
-    <img class="mainVisual__image mainVisual__image--desk" src="<?php echo esc_url(get_theme_file_uri('img/mv-desk.png')); ?>" alt="デスク画像">
-    <img class="mainVisual__image mainVisual__image--light" src="<?php echo esc_url(get_theme_file_uri('img/mv-light.png')) ?>" alt="電球の画像">
+    <img class="mainVisual__image mainVisual__image--PC" src="<?php echo esc_url(get_theme_file_uri('img/mv-pc.webp')); ?>" alt="PC画像">
+    <img class="mainVisual__image mainVisual__image--desk" src="<?php echo esc_url(get_theme_file_uri('img/mv-desk.webp')); ?>" alt="デスク画像">
+    <img class="mainVisual__image mainVisual__image--light" src="<?php echo esc_url(get_theme_file_uri('img/mv-light.webp')) ?>" alt="電球の画像">
   </div><!-- mainVisual -->
 
 
@@ -119,7 +109,7 @@ if (is_front_page()) {
         <ul class="top-service__list">
           <li class="top-service__listItem animeTarget slideInLtoR">
             <div class="top-service__itemImage">
-              <img src="<?php echo esc_url(get_theme_file_uri('img/service-pc.png')) ?>" alt="PCのイラスト">
+              <img src="<?php echo esc_url(get_theme_file_uri('img/service-pc.webp')) ?>" alt="PCのイラスト">
             </div>
             <div class="top-service__textArea">
               <h3 class="top-service__itemTitle">WEBサイト制作</h3>
@@ -133,7 +123,7 @@ if (is_front_page()) {
           </li>
           <li class="top-service__listItem animeTarget slideInRtoL">
             <div class="top-service__itemImage">
-              <img src="<?php echo esc_url(get_theme_file_uri('img/service-sp.png')) ?>" alt="スマートフォンのイラスト">
+              <img src="<?php echo esc_url(get_theme_file_uri('img/service-sp.webp')) ?>" alt="スマートフォンのイラスト">
             </div>
             <div class="top-service__textArea">
               <h3 class="top-service__itemTitle">LP制作</h3>
@@ -146,7 +136,7 @@ if (is_front_page()) {
           </li>
           <li class="top-service__listItem animeTarget slideInLtoR">
             <div class="top-service__itemImage">
-              <img src="<?php echo esc_url(get_theme_file_uri('img/service-brush.png'))?>" alt="ブラシのイラスト">
+              <img src="<?php echo esc_url(get_theme_file_uri('img/service-brush.webp'))?>" alt="ブラシのイラスト">
             </div>
             <div class="top-service__textArea">
               <h3 class="top-service__itemTitle">バナー画像制作</h3>
@@ -183,7 +173,7 @@ if (is_front_page()) {
       </div>
       <div class="top-about__contentWrap">
         <div class="top-about__image animeTarget slideInLtoR">
-          <img src="<?php echo esc_url(get_theme_file_uri('img/my-image.png')) ?>" alt="わたしのアイコンの画像">
+          <img src="<?php echo esc_url(get_theme_file_uri('img/my-image.webp')) ?>" alt="わたしのアイコンの画像">
         </div>
         <div class="top-about__commentWrap animeTarget slideInRtoL">
           <p class="top-about__comment">
@@ -226,7 +216,7 @@ if (is_front_page()) {
 
       <div class="top-contact__contentWrap animeTarget">
         <div class="top-contact__image top-contact__image--sp animeTarget slideInLtoR">
-          <img src="<?php echo esc_url(get_theme_file_uri('img/top-contact__iphone.png')) ?>" alt="iphoneのはめ込み画像">
+          <img src="<?php echo esc_url(get_theme_file_uri('img/top-contact__iphone.webp')) ?>" alt="iphoneのはめ込み画像">
         </div>
         <p class="top-contact__message animeTarget slideInBtoU">
           興味をもっていただけましたら、<br>
@@ -236,7 +226,7 @@ if (is_front_page()) {
           お手伝いをさせていただきます。<br>
         </p>
         <div class="top-contact__image top-contact__image--pc animeTarget slideInRtoL">
-          <img src="<?php echo esc_url(get_theme_file_uri('img/top-contact__macbook.png')) ?>" alt="macbookのはめ込み画像">
+          <img src="<?php echo esc_url(get_theme_file_uri('img/top-contact__macbook.webp')) ?>" alt="macbookのはめ込み画像">
         </div>
       </div>
       <div class="top-service__btnWrap c-btnWrap">

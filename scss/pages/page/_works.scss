@@ -18,10 +18,11 @@
 .worksImage {
   text-align: center;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 16px auto 0;
 }
 .worksImage img {
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   height: auto;
   max-height: 600px;
 }
