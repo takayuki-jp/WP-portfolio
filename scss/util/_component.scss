@@ -167,19 +167,19 @@
 .c-worksCard {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;;
   height: 100%;
 }
 .c-worksCard__link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   max-width: 360px;
+  height: 100%;
   padding: 24px 16px;
   background-color: #fff;
   border-radius: 10px;
   @include boxShadow;
-  display: flex;
-  flex-direction: column;
   gap: 24px;
-  height: 100%;
   transition: transform .5s ease, box-shadow .5s ease, opacity .5s ease;
   @include sp {
     gap: 8px;
@@ -199,31 +199,30 @@
     opacity: none !important;
   }
 }
-
-.c-worksCard__link > div {
-  flex: 1 0 auto;
-}
 .c-worksCard__image {
-  flex-grow: 1;
+  flex: 0 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  max-height: 250px;
   aspect-ratio: 4 / 3;
+  overflow: hidden;
 }
 .c-worksCard__image > img {
-  width: auto;
   max-width: 100%;
-  height: auto;
   object-fit: contain;
 }
 .c-worksCard__info {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   gap: 8px;
   text-align: center;
-  flex-grow: 1;
+  min-height: 160px;
+  @include sp {
+    min-height: 125px;
+  }
 }
 .c-worksCard__titleWrap {
   flex-grow: 1;
